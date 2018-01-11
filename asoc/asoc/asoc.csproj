@@ -200,6 +200,9 @@
     <EmbeddedResource Include="registerForm.resx">
       <DependentUpon>registerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User_Form.resx">
+      <DependentUpon>User_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="AsociatieProprietariModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>AsociatieProprietariModel.Designer.cs</LastGenOutput>
