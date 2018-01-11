@@ -50,20 +50,21 @@ namespace asoc
                                        select new
                                        {
                                            c.Username,
-                                           c.Parola
+                                           c.Parola,
+                                           c.TipCont
                                        });
 
-                        if (results.ToArray()[0].Username==user_textbox.Text)
+                        if (results.Count() != 0 && results.ToList()[0].Username == user_textbox.Text)
                         {
-                            if(results.ToArray()[0].Parola == password_textbox.Text)
+                            if (results.ToList()[0].Parola == password_textbox.Text)
                             {
                                 this.Close();
+                                //verific tipul utilizatorului si deschid form-ul aferent
                             }
                             else MessageBox.Show("Parola gresita!", "Avertisment", MessageBoxButtons.OK);
                         }
                         else MessageBox.Show("Utilizator inexistent!", "Avertisment", MessageBoxButtons.OK);
-                    }
-                    //this.Close();
+                    }                    
                 }
                 else
                 {
