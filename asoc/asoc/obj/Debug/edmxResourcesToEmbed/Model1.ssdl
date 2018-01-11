@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Angajati">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nume" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Prenume" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Functie" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Salariu/luna" Type="money" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Asociatie Proprietari.dbo.ApaCalda' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ApaCalda">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="IdApartament" />
+      <PropertyRef Name="IdResursa" />
+      <PropertyRef Name="Index Vechi" />
+      <PropertyRef Name="Index Nou" />
+      <PropertyRef Name="Consum" />
+      <PropertyRef Name="Pret/m cub" />
+      <PropertyRef Name="Total Plata" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdApartament" Type="int" Nullable="false" />
+    <Property Name="IdResursa" Type="int" Nullable="false" />
+    <Property Name="Index Vechi" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Index Nou" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Consum" Type="int" Nullable="false" />
+    <Property Name="Pret/m cub" Type="money" Nullable="false" />
+    <Property Name="Total Plata" Type="money" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Asociatie Proprietari.dbo.ApaRece' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ApaRece">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="IdApartament" />
+      <PropertyRef Name="IdResursa" />
+      <PropertyRef Name="Index Vechi" />
+      <PropertyRef Name="Index Nou" />
+      <PropertyRef Name="Consum" />
+      <PropertyRef Name="Pret/m cub" />
+      <PropertyRef Name="Total Plata" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdApartament" Type="int" Nullable="false" />
+    <Property Name="IdResursa" Type="int" Nullable="false" />
+    <Property Name="Index Vechi" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Index Nou" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Consum" Type="int" Nullable="false" />
+    <Property Name="Pret/m cub" Type="money" Nullable="false" />
+    <Property Name="Total Plata" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Apartamente">
+    <Key>
+      <PropertyRef Name="Numar" />
+    </Key>
+    <Property Name="Numar" Type="int" Nullable="false" />
+    <Property Name="IdProprietar" Type="int" Nullable="false" />
+    <Property Name="Suprafata(mP)" Type="int" Nullable="false" />
+    <Property Name="Suprafata utila(mP)" Type="int" Nullable="false" />
+    <Property Name="Numar locatari" Type="int" Nullable="false" />
+    <Property Name="Numar Camere" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Coduri">
+    <Key>
+      <PropertyRef Name="Index" />
+    </Key>
+    <Property Name="Index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cod" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Asociatie Proprietari.dbo.Date Angajati' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Date Angajati">
+    <Key>
+      <PropertyRef Name="index" />
+      <PropertyRef Name="IdAngajat" />
+      <PropertyRef Name="CNP" />
+      <PropertyRef Name="Data Angajare" />
+      <PropertyRef Name="Numar telefon" />
+      <PropertyRef Name="Localitate" />
+      <PropertyRef Name="Strada" />
+    </Key>
+    <Property Name="index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdAngajat" Type="int" Nullable="false" />
+    <Property Name="CNP" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Data Angajare" Type="date" Nullable="false" />
+    <Property Name="Vechime" Type="int" />
+    <Property Name="Numar telefon" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Localitate" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Strada" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Numar" Type="nchar" MaxLength="10" />
+    <Property Name="Bloc" Type="nchar" MaxLength="10" />
+    <Property Name="Scara" Type="nchar" MaxLength="10" />
+    <Property Name="Etaj" Type="nchar" MaxLength="10" />
+    <Property Name="Apartament" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Asociatie Proprietari.dbo.EnergieElectrica' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="EnergieElectrica">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="IdApartament" />
+      <PropertyRef Name="IdResursa" />
+      <PropertyRef Name="Index Vechi" />
+      <PropertyRef Name="Index Nou" />
+      <PropertyRef Name="Consum" />
+      <PropertyRef Name="Pret/Kw" />
+      <PropertyRef Name="Total Plata" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdApartament" Type="int" Nullable="false" />
+    <Property Name="IdResursa" Type="int" Nullable="false" />
+    <Property Name="Index Vechi" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Index Nou" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Consum" Type="int" Nullable="false" />
+    <Property Name="Pret/Kw" Type="money" Nullable="false" />
+    <Property Name="Total Plata" Type="money" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Asociatie Proprietari.dbo.Gaz' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Gaz">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="IdApartament" />
+      <PropertyRef Name="IdResursa" />
+      <PropertyRef Name="Index Vechi" />
+      <PropertyRef Name="Index Nou" />
+      <PropertyRef Name="Consum" />
+      <PropertyRef Name="Pret/m cub" />
+      <PropertyRef Name="Total Plata" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdApartament" Type="int" Nullable="false" />
+    <Property Name="IdResursa" Type="int" Nullable="false" />
+    <Property Name="Index Vechi" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Index Nou" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Consum" Type="int" Nullable="false" />
+    <Property Name="Pret/m cub" Type="money" Nullable="false" />
+    <Property Name="Total Plata" Type="money" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Asociatie Proprietari.dbo.Locatari' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Locatari">
+    <Key>
+      <PropertyRef Name="Index" />
+      <PropertyRef Name="IdApartament" />
+      <PropertyRef Name="Nume" />
+      <PropertyRef Name="Prenume" />
+      <PropertyRef Name="CNP" />
+      <PropertyRef Name="Data Mutare" />
+    </Key>
+    <Property Name="Index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdApartament" Type="int" Nullable="false" />
+    <Property Name="Nume" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Prenume" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="CNP" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Data Mutare" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Membri Asociatie">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nume" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Prenume" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Numar telefon" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Emai" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="Data Inscriere" Type="date" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Asociatie Proprietari.dbo.Restante de Plata' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Restante de Plata">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="IdApartament" />
+      <PropertyRef Name="Restante" />
+      <PropertyRef Name="Inceput perioada" />
+      <PropertyRef Name="Sfarsit perioada" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdApartament" Type="int" Nullable="false" />
+    <Property Name="Restante" Type="money" Nullable="false" />
+    <Property Name="Inceput perioada" Type="date" Nullable="false" />
+    <Property Name="Sfarsit perioada" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="A_Da">
+    <End Role="Angajati" Type="Self.Angajati" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Date Angajati" Type="Self.Date Angajati" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Angajati">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Date Angajati">
+        <PropertyRef Name="IdAngajat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="Angajati" EntityType="Self.Angajati" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Apartamente" EntityType="Self.Apartamente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Coduri" EntityType="Self.Coduri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Membri Asociatie" EntityType="Self.Membri Asociatie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ApaCalda" EntityType="Self.ApaCalda" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ApaCalda].[ID] AS [ID], 
+    [ApaCalda].[IdApartament] AS [IdApartament], 
+    [ApaCalda].[IdResursa] AS [IdResursa], 
+    [ApaCalda].[Index Vechi] AS [Index Vechi], 
+    [ApaCalda].[Index Nou] AS [Index Nou], 
+    [ApaCalda].[Consum] AS [Consum], 
+    [ApaCalda].[Pret/m cub] AS [Pret/m cub], 
+    [ApaCalda].[Total Plata] AS [Total Plata]
+    FROM [dbo].[ApaCalda] AS [ApaCalda]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ApaRece" EntityType="Self.ApaRece" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ApaRece].[ID] AS [ID], 
+    [ApaRece].[IdApartament] AS [IdApartament], 
+    [ApaRece].[IdResursa] AS [IdResursa], 
+    [ApaRece].[Index Vechi] AS [Index Vechi], 
+    [ApaRece].[Index Nou] AS [Index Nou], 
+    [ApaRece].[Consum] AS [Consum], 
+    [ApaRece].[Pret/m cub] AS [Pret/m cub], 
+    [ApaRece].[Total Plata] AS [Total Plata]
+    FROM [dbo].[ApaRece] AS [ApaRece]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Date Angajati" EntityType="Self.Date Angajati" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Date Angajati].[index] AS [index], 
+    [Date Angajati].[IdAngajat] AS [IdAngajat], 
+    [Date Angajati].[CNP] AS [CNP], 
+    [Date Angajati].[Data Angajare] AS [Data Angajare], 
+    [Date Angajati].[Vechime] AS [Vechime], 
+    [Date Angajati].[Numar telefon] AS [Numar telefon], 
+    [Date Angajati].[Localitate] AS [Localitate], 
+    [Date Angajati].[Strada] AS [Strada], 
+    [Date Angajati].[Numar] AS [Numar], 
+    [Date Angajati].[Bloc] AS [Bloc], 
+    [Date Angajati].[Scara] AS [Scara], 
+    [Date Angajati].[Etaj] AS [Etaj], 
+    [Date Angajati].[Apartament] AS [Apartament]
+    FROM [dbo].[Date Angajati] AS [Date Angajati]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="EnergieElectrica" EntityType="Self.EnergieElectrica" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [EnergieElectrica].[ID] AS [ID], 
+    [EnergieElectrica].[IdApartament] AS [IdApartament], 
+    [EnergieElectrica].[IdResursa] AS [IdResursa], 
+    [EnergieElectrica].[Index Vechi] AS [Index Vechi], 
+    [EnergieElectrica].[Index Nou] AS [Index Nou], 
+    [EnergieElectrica].[Consum] AS [Consum], 
+    [EnergieElectrica].[Pret/Kw] AS [Pret/Kw], 
+    [EnergieElectrica].[Total Plata] AS [Total Plata]
+    FROM [dbo].[EnergieElectrica] AS [EnergieElectrica]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Gaz" EntityType="Self.Gaz" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Gaz].[ID] AS [ID], 
+    [Gaz].[IdApartament] AS [IdApartament], 
+    [Gaz].[IdResursa] AS [IdResursa], 
+    [Gaz].[Index Vechi] AS [Index Vechi], 
+    [Gaz].[Index Nou] AS [Index Nou], 
+    [Gaz].[Consum] AS [Consum], 
+    [Gaz].[Pret/m cub] AS [Pret/m cub], 
+    [Gaz].[Total Plata] AS [Total Plata]
+    FROM [dbo].[Gaz] AS [Gaz]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Locatari" EntityType="Self.Locatari" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Locatari].[Index] AS [Index], 
+    [Locatari].[IdApartament] AS [IdApartament], 
+    [Locatari].[Nume] AS [Nume], 
+    [Locatari].[Prenume] AS [Prenume], 
+    [Locatari].[CNP] AS [CNP], 
+    [Locatari].[Data Mutare] AS [Data Mutare]
+    FROM [dbo].[Locatari] AS [Locatari]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Restante de Plata" EntityType="Self.Restante de Plata" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Restante de Plata].[ID] AS [ID], 
+    [Restante de Plata].[IdApartament] AS [IdApartament], 
+    [Restante de Plata].[Restante] AS [Restante], 
+    [Restante de Plata].[Inceput perioada] AS [Inceput perioada], 
+    [Restante de Plata].[Sfarsit perioada] AS [Sfarsit perioada]
+    FROM [dbo].[Restante de Plata] AS [Restante de Plata]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="A_Da" Association="Self.A_Da">
+      <End Role="Angajati" EntitySet="Angajati" />
+      <End Role="Date Angajati" EntitySet="Date Angajati" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
