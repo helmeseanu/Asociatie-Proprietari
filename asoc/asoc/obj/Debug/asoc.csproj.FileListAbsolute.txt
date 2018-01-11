@@ -12,3 +12,4 @@ E:\Asociatie-Proprietari\asoc\asoc\obj\Debug\asoc.csproj.GenerateResource.Cache
 E:\Asociatie-Proprietari\asoc\asoc\obj\Debug\asoc.csproj.CoreCompileInputs.cache
 E:\Asociatie-Proprietari\asoc\asoc\obj\Debug\asoc.exe
 E:\Asociatie-Proprietari\asoc\asoc\obj\Debug\asoc.pdb
+E:\Asociatie-Proprietari\asoc\asoc\obj\Debug\asoc.registerForm.resources

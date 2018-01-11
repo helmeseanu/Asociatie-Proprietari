@@ -43,9 +43,27 @@ namespace asoc
             {
                 if(password_textbox.Text.Length!=0)
                 {
-                    var context = new Asociatie_ProprietariEntities();
-                    if(context.Conturi_de_Utilizator.)
-                    this.Close();
+                    using (var context = new Asociatie_ProprietariEntities())
+                    {
+                        var results = (from c in context.Conturi_de_Utilizator
+                                       where c.Username == user_textbox.Text
+                                       select new
+                                       {
+                                           c.Username,
+                                           c.Parola
+                                       });
+
+                        if (results.ToArray()[0].Username==user_textbox.Text)
+                        {
+                            if(results.ToArray()[0].Parola == password_textbox.Text)
+                            {
+                                this.Close();
+                            }
+                            else MessageBox.Show("Parola gresita!", "Avertisment", MessageBoxButtons.OK);
+                        }
+                        else MessageBox.Show("Utilizator inexistent!", "Avertisment", MessageBoxButtons.OK);
+                    }
+                    //this.Close();
                 }
                 else
                 {

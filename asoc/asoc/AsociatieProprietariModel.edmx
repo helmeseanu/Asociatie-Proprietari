@@ -100,10 +100,11 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
           <Key>
             <PropertyRef Name="Index" />
           </Key>
-          <Property Name="Index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Username" Type="int" Nullable="false" />
-          <Property Name="Parola" Type="int" Nullable="false" />
-          <Property Name="IdMembru" Type="int" Nullable="false" />
+          <Property Name="Index" Type="int" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Parola" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IDMembru" Type="int" Nullable="false" />
+          <Property Name="TipCont" Type="nchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="Cota Parte">
           <Key>
@@ -569,6 +570,18 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Conturi de Utilizator_Membri Asociatie">
+          <End Role="Membri Asociatie" Type="Self.Membri Asociatie" Multiplicity="1" />
+          <End Role="Conturi de Utilizator" Type="Self.Conturi de Utilizator" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Membri Asociatie">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Conturi de Utilizator">
+              <PropertyRef Name="IDMembru" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="Fur_restante">
           <End Role="Facturi Clienti" Type="Self.Facturi Clienti" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -580,20 +593,6 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
             </Principal>
             <Dependent Role="Restante">
               <PropertyRef Name="CUIFactura" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="M_CU">
-          <End Role="Membri Asociatie" Type="Self.Membri Asociatie" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="Conturi de Utilizator" Type="Self.Conturi de Utilizator" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Membri Asociatie">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Conturi de Utilizator">
-              <PropertyRef Name="IdMembru" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -765,13 +764,13 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
             <End Role="Apartamente" EntitySet="Apartamente" />
             <End Role="Fond Reparatii" EntitySet="Fond Reparatii" />
           </AssociationSet>
+          <AssociationSet Name="FK_Conturi de Utilizator_Membri Asociatie" Association="Self.FK_Conturi de Utilizator_Membri Asociatie">
+            <End Role="Membri Asociatie" EntitySet="Membri Asociatie" />
+            <End Role="Conturi de Utilizator" EntitySet="Conturi de Utilizator" />
+          </AssociationSet>
           <AssociationSet Name="Fur_restante" Association="Self.Fur_restante">
             <End Role="Facturi Clienti" EntitySet="Facturi Clienti" />
             <End Role="Restante" EntitySet="Restante" />
-          </AssociationSet>
-          <AssociationSet Name="M_CU" Association="Self.M_CU">
-            <End Role="Membri Asociatie" EntitySet="Membri Asociatie" />
-            <End Role="Conturi de Utilizator" EntitySet="Conturi de Utilizator" />
           </AssociationSet>
           <AssociationSet Name="Mmb_Avans" Association="Self.Mmb_Avans">
             <End Role="Membri Asociatie" EntitySet="Membri Asociatie" />
@@ -894,11 +893,12 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
           <Key>
             <PropertyRef Name="Index" />
           </Key>
-          <Property Name="Index" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Username" Type="Int32" Nullable="false" />
-          <Property Name="Parola" Type="Int32" Nullable="false" />
-          <Property Name="IdMembru" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Membri_Asociatie" Relationship="Self.M_CU" FromRole="Conturi_de_Utilizator" ToRole="Membri_Asociatie" />
+          <Property Name="Index" Type="Int32" Nullable="false" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Parola" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IDMembru" Type="Int32" Nullable="false" />
+          <Property Name="TipCont" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Membri_Asociatie" Relationship="Self.FK_Conturi_de_Utilizator_Membri_Asociatie" FromRole="Conturi_de_Utilizator" ToRole="Membri_Asociatie" />
         </EntityType>
         <EntityType Name="Cota_Parte">
           <Key>
@@ -1079,7 +1079,7 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
           <Property Name="Emai" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="Data_Inscriere" Type="DateTime" Nullable="false" Precision="0" />
           <NavigationProperty Name="Apartamente" Relationship="Self.PRO_AP" FromRole="Membri_Asociatie" ToRole="Apartamente" />
-          <NavigationProperty Name="Conturi_de_Utilizator" Relationship="Self.M_CU" FromRole="Membri_Asociatie" ToRole="Conturi_de_Utilizator" />
+          <NavigationProperty Name="Conturi_de_Utilizator" Relationship="Self.FK_Conturi_de_Utilizator_Membri_Asociatie" FromRole="Membri_Asociatie" ToRole="Conturi_de_Utilizator" />
           <NavigationProperty Name="Avansuri_de_Plata" Relationship="Self.Mmb_Avans" FromRole="Membri_Asociatie" ToRole="Avansuri_de_Plata" />
         </EntityType>
         <EntityType Name="Restante">
@@ -1407,17 +1407,15 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="M_CU">
-          <End Role="Membri_Asociatie" Type="Self.Membri_Asociatie" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
+        <Association Name="FK_Conturi_de_Utilizator_Membri_Asociatie">
+          <End Role="Membri_Asociatie" Type="Self.Membri_Asociatie" Multiplicity="1" />
           <End Role="Conturi_de_Utilizator" Type="Self.Conturi_de_Utilizator" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Membri_Asociatie">
               <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="Conturi_de_Utilizator">
-              <PropertyRef Name="IdMembru" />
+              <PropertyRef Name="IDMembru" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1556,7 +1554,7 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
             <End Role="Membri_Asociatie" EntitySet="Membri_Asociatie" />
             <End Role="Apartamente" EntitySet="Apartamente" />
           </AssociationSet>
-          <AssociationSet Name="M_CU" Association="Self.M_CU">
+          <AssociationSet Name="FK_Conturi_de_Utilizator_Membri_Asociatie" Association="Self.FK_Conturi_de_Utilizator_Membri_Asociatie">
             <End Role="Membri_Asociatie" EntitySet="Membri_Asociatie" />
             <End Role="Conturi_de_Utilizator" EntitySet="Conturi_de_Utilizator" />
           </AssociationSet>
@@ -1709,7 +1707,8 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
                 <ScalarProperty Name="Index" ColumnName="Index" />
                 <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="Parola" ColumnName="Parola" />
-                <ScalarProperty Name="IdMembru" ColumnName="IdMembru" />
+                <ScalarProperty Name="IDMembru" ColumnName="IDMembru" />
+                <ScalarProperty Name="TipCont" ColumnName="TipCont" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

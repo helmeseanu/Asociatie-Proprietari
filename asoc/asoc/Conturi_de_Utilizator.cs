@@ -15,9 +15,10 @@ namespace asoc
     public partial class Conturi_de_Utilizator
     {
         public int Index { get; set; }
-        public int Username { get; set; }
-        public int Parola { get; set; }
-        public int IdMembru { get; set; }
+        public string Username { get; set; }
+        public string Parola { get; set; }
+        public int IDMembru { get; set; }
+        public string TipCont { get; set; }
     
         public virtual Membri_Asociatie Membri_Asociatie { get; set; }
     }

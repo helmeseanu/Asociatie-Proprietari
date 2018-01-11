@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e22c572e1d1e4668bc3574ea5c666e86" Name="Diagram1">
+      <Diagram DiagramId="e7c56a10eda74819b5697f1e458feed5" Name="Diagram1">
         <EntityTypeShape EntityType="Model.Agent_Termic" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Angajati" Width="1.5" PointX="7.75" PointY="1.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.ApaCalda" Width="1.5" PointX="5.25" PointY="6.375" IsExpanded="true" />
@@ -15,7 +15,7 @@
         <EntityTypeShape EntityType="Model.Contracte_Individuale" Width="1.5" PointX="5.25" PointY="15.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Conturi_de_Utilizator" Width="1.5" PointX="3" PointY="54.25" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Cota_Parte" Width="1.5" PointX="5.25" PointY="18.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Curatenie" Width="1.5" PointX="5.25" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Curatenie" Width="1.5" PointX="5.25" PointY="21.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Date_Angajati" Width="1.5" PointX="10" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.EnergieElecrica_pe_scara" Width="1.5" PointX="5.25" PointY="24" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.EnergieElectrica" Width="1.5" PointX="5.25" PointY="27" IsExpanded="true" />
@@ -28,13 +28,13 @@
         <EntityTypeShape EntityType="Model.Juranal" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Lift" Width="1.5" PointX="5.25" PointY="42.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Locatari" Width="1.5" PointX="5.25" PointY="45.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Membri_Asociatie" Width="1.5" PointX="0.75" PointY="29.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Restante" Width="1.5" PointX="7.5" PointY="30.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Membri_Asociatie" Width="1.5" PointX="0.75" PointY="29.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Restante" Width="1.5" PointX="7.5" PointY="30.625" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Salarii_Angajati" Width="1.5" PointX="5.25" PointY="48.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Salubritate" Width="1.5" PointX="5.25" PointY="51.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.sysdiagrams" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Venituri" Width="1.5" PointX="7.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Avansuri_de_Plata" Width="1.5" PointX="3" PointY="57" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Avansuri_de_Plata" Width="1.5" PointX="3" PointY="57.125" IsExpanded="true" />
         <AssociationConnector Association="Model.AP_AT" ManuallyRouted="false" />
         <AssociationConnector Association="Model.A_Da" ManuallyRouted="false" />
         <AssociationConnector Association="Model.A_AC" ManuallyRouted="false" />
@@ -54,7 +54,7 @@
         <AssociationConnector Association="Model.AP_LOC" ManuallyRouted="false" />
         <AssociationConnector Association="Model.AP_REP" ManuallyRouted="false" />
         <AssociationConnector Association="Model.PRO_AP" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.M_CU" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Conturi_de_Utilizator_Membri_Asociatie" ManuallyRouted="false" />
         <AssociationConnector Association="Model.Fur_restante" ManuallyRouted="false" />
         <AssociationConnector Association="Model.Mmb_Avans" ManuallyRouted="false" />
       </Diagram>
