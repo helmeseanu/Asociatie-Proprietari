@@ -176,6 +176,12 @@
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>AsociatieProprietariModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="User_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User_Form.Designer.cs">
+      <DependentUpon>User_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Venituri.cs">
       <DependentUpon>AsociatieProprietariModel.tt</DependentUpon>
     </Compile>
@@ -193,6 +199,9 @@
     </Compile>
     <EmbeddedResource Include="registerForm.resx">
       <DependentUpon>registerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Form.resx">
+      <DependentUpon>User_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="AsociatieProprietariModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
