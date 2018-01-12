@@ -16,5 +16,10 @@ namespace asoc
         {
             InitializeComponent();
         }
+
+        private void User_Form_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
