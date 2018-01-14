@@ -17,8 +17,8 @@ namespace asoc
         public int Index { get; set; }
         public string Username { get; set; }
         public string Parola { get; set; }
-        public int IDMembru { get; set; }
-        public string TipCont { get; set; }
+        public int IdMembru { get; set; }
+        public string Tip { get; set; }
     
         public virtual Membri_Asociatie Membri_Asociatie { get; set; }
     }

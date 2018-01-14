@@ -14,13 +14,16 @@ namespace asoc
     
     public partial class Facturi_Furnizori
     {
-        public decimal CUI { get; set; }
-        public string Furnizor { get; set; }
+        public decimal ID { get; set; }
+        public decimal CUIFurnizor { get; set; }
         public decimal Cantitate_furnizata { get; set; }
         public decimal Total_plata { get; set; }
         public System.DateTime Data_emitere { get; set; }
         public System.DateTime Data_scadenta { get; set; }
         public string Perioada_facturare { get; set; }
         public string Achitat { get; set; }
+        public System.DateTime Data_Achitare { get; set; }
+    
+        public virtual Furnizori Furnizori { get; set; }
     }
 }

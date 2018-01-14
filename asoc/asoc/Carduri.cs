@@ -12,11 +12,14 @@ namespace asoc
     using System;
     using System.Collections.Generic;
     
-    public partial class Juranal
+    public partial class Carduri
     {
         public int Index { get; set; }
-        public decimal CUIFactura { get; set; }
-        public string Tranzactie { get; set; }
-        public System.DateTime Data { get; set; }
+        public int IdMembru { get; set; }
+        public string Numar_Card { get; set; }
+        public int CVC { get; set; }
+        public System.DateTime Data_Expirare { get; set; }
+    
+        public virtual Membri_Asociatie Membri_Asociatie { get; set; }
     }
 }

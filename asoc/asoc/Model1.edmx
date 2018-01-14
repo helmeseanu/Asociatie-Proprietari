@@ -48,6 +48,7 @@
           <Property Name="Consum" Type="int" Nullable="false" />
           <Property Name="Pret/m cub" Type="money" Nullable="false" />
           <Property Name="Suma de plata" Type="money" Nullable="false" />
+          <Property Name="Data emitere" Type="date" />
         </EntityType>
         <EntityType Name="Apartamente">
           <Key>
@@ -60,18 +61,6 @@
           <Property Name="Numar locatari" Type="int" Nullable="false" />
           <Property Name="Numar Camere" Type="int" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="Avansuri de Plata">
-          <Key>
-            <PropertyRef Name="Index" />
-            <PropertyRef Name="IdMembru" />
-            <PropertyRef Name="Avansuri" />
-          </Key>
-          <Property Name="Index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IdMembru" Type="int" Nullable="false" />
-          <Property Name="Avansuri" Type="money" Nullable="false" />
-        </EntityType>
         <EntityType Name="Canalizare">
           <Key>
             <PropertyRef Name="Index" />
@@ -80,6 +69,16 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
           <Property Name="IdApartament" Type="int" Nullable="false" />
           <Property Name="Suma de plata" Type="money" Nullable="false" />
           <Property Name="Data emitere" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Carduri">
+          <Key>
+            <PropertyRef Name="Index" />
+          </Key>
+          <Property Name="Index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdMembru" Type="int" Nullable="false" />
+          <Property Name="Numar Card" Type="nchar" MaxLength="17" Nullable="false" />
+          <Property Name="CVC" Type="int" Nullable="false" />
+          <Property Name="Data Expirare" Type="date" Nullable="false" />
         </EntityType>
         <EntityType Name="Coduri">
           <Key>
@@ -95,16 +94,17 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
           <Property Name="Index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdApartament" Type="int" Nullable="false" />
           <Property Name="Serviciu" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="Data" Type="date" Nullable="false" />
         </EntityType>
         <EntityType Name="Conturi de Utilizator">
           <Key>
             <PropertyRef Name="Index" />
           </Key>
-          <Property Name="Index" Type="int" Nullable="false" />
-          <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Parola" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="IDMembru" Type="int" Nullable="false" />
-          <Property Name="TipCont" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="Parola" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="IdMembru" Type="int" Nullable="false" />
+          <Property Name="Tip" Type="nchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="Cota Parte">
           <Key>
@@ -133,15 +133,15 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
           <Property Name="IdAngajat" Type="int" Nullable="false" />
           <Property Name="CNP" Type="nchar" MaxLength="20" Nullable="false" />
           <Property Name="Data Angajare" Type="date" Nullable="false" />
-          <Property Name="Vechime" Type="int" />
+          <Property Name="Vechime" Type="int" Nullable="false" />
           <Property Name="Numar telefon" Type="nchar" MaxLength="10" Nullable="false" />
           <Property Name="Localitate" Type="nchar" MaxLength="20" Nullable="false" />
           <Property Name="Strada" Type="nchar" MaxLength="20" Nullable="false" />
-          <Property Name="Numar" Type="nchar" MaxLength="10" />
-          <Property Name="Bloc" Type="nchar" MaxLength="10" />
-          <Property Name="Scara" Type="nchar" MaxLength="10" />
-          <Property Name="Etaj" Type="nchar" MaxLength="10" />
-          <Property Name="Apartament" Type="nchar" MaxLength="10" />
+          <Property Name="Numar" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Bloc" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Scara" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Etaj" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Apartament" Type="nchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="EnergieElecrica pe scara">
           <Key>
@@ -164,12 +164,13 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
           <Property Name="Consum" Type="int" Nullable="false" />
           <Property Name="Pret/Kw" Type="money" Nullable="false" />
           <Property Name="Suma de plata" Type="money" Nullable="false" />
+          <Property Name="Data emitere" Type="date" />
         </EntityType>
         <EntityType Name="Facturi Clienti">
           <Key>
-            <PropertyRef Name="CUI" />
+            <PropertyRef Name="ID" />
           </Key>
-          <Property Name="CUI" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="ID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
           <Property Name="Nume" Type="nchar" MaxLength="20" Nullable="false" />
           <Property Name="Prenume" Type="nchar" MaxLength="20" Nullable="false" />
           <Property Name="IdApartament" Type="int" Nullable="false" />
@@ -177,20 +178,22 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
           <Property Name="Data emitere" Type="date" Nullable="false" />
           <Property Name="Data Scadenta" Type="date" Nullable="false" />
           <Property Name="Perioada Facturare" Type="int" Nullable="false" />
-          <Property Name="Achitat" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Achitat" Type="nchar" MaxLength="10" />
+          <Property Name="Data Achitare" Type="date" />
         </EntityType>
         <EntityType Name="Facturi Furnizori">
           <Key>
-            <PropertyRef Name="CUI" />
+            <PropertyRef Name="ID" />
           </Key>
-          <Property Name="CUI" Type="numeric" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="Furnizor" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="ID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="CUIFurnizor" Type="numeric" Precision="18" Scale="0" Nullable="false" />
           <Property Name="Cantitate furnizata" Type="numeric" Precision="18" Scale="0" Nullable="false" />
           <Property Name="Total plata" Type="money" Nullable="false" />
           <Property Name="Data emitere" Type="date" Nullable="false" />
           <Property Name="Data scadenta" Type="date" Nullable="false" />
           <Property Name="Perioada facturare" Type="nchar" MaxLength="10" Nullable="false" />
           <Property Name="Achitat" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Data Achitare" Type="date" Nullable="false" />
         </EntityType>
         <EntityType Name="Fond Reparatii">
           <Key>
@@ -214,10 +217,10 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
           <Key>
             <PropertyRef Name="CUI" />
           </Key>
-          <Property Name="CUI" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nume" Type="nchar" MaxLength="20" Nullable="false" />
-          <Property Name="Email" Type="nchar" MaxLength="20" Nullable="false" />
-          <Property Name="Serviciu" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="CUI" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Nume" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Serviciu" Type="nchar" MaxLength="50" Nullable="false" />
           <Property Name="Data semnare contract" Type="date" Nullable="false" />
           <Property Name="Data expirare contract" Type="date" Nullable="false" />
         </EntityType>
@@ -232,15 +235,7 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
           <Property Name="Consum" Type="int" Nullable="false" />
           <Property Name="Pret/m cub" Type="money" Nullable="false" />
           <Property Name="Suma de plata" Type="money" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Juranal">
-          <Key>
-            <PropertyRef Name="Index" />
-          </Key>
-          <Property Name="Index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CUIFactura" Type="numeric" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="Tranzactie" Type="nchar" MaxLength="10" Nullable="false" />
-          <Property Name="Data" Type="date" Nullable="false" />
+          <Property Name="Data Emitere" Type="date" />
         </EntityType>
         <EntityType Name="Lift">
           <Key>
@@ -271,6 +266,7 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
           <Property Name="Prenume" Type="nchar" MaxLength="20" Nullable="false" />
           <Property Name="Numar telefon" Type="nchar" MaxLength="10" Nullable="false" />
           <Property Name="Emai" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="Functie" Type="nchar" MaxLength="20" Nullable="false" />
           <Property Name="Data Inscriere" Type="date" Nullable="false" />
         </EntityType>
         <EntityType Name="Restante">
@@ -570,15 +566,15 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Conturi de Utilizator_Membri Asociatie">
-          <End Role="Membri Asociatie" Type="Self.Membri Asociatie" Multiplicity="1" />
-          <End Role="Conturi de Utilizator" Type="Self.Conturi de Utilizator" Multiplicity="*" />
+        <Association Name="F_Facturi">
+          <End Role="Furnizori" Type="Self.Furnizori" Multiplicity="1" />
+          <End Role="Facturi Furnizori" Type="Self.Facturi Furnizori" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Membri Asociatie">
-              <PropertyRef Name="ID" />
+            <Principal Role="Furnizori">
+              <PropertyRef Name="CUI" />
             </Principal>
-            <Dependent Role="Conturi de Utilizator">
-              <PropertyRef Name="IDMembru" />
+            <Dependent Role="Facturi Furnizori">
+              <PropertyRef Name="CUIFurnizor" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -589,23 +585,35 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
           <End Role="Restante" Type="Self.Restante" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Facturi Clienti">
-              <PropertyRef Name="CUI" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="Restante">
               <PropertyRef Name="CUIFactura" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="Mmb_Avans">
+        <Association Name="M_CARD">
           <End Role="Membri Asociatie" Type="Self.Membri Asociatie" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="Avansuri de Plata" Type="Self.Avansuri de Plata" Multiplicity="*" />
+          <End Role="Carduri" Type="Self.Carduri" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Membri Asociatie">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="Avansuri de Plata">
+            <Dependent Role="Carduri">
+              <PropertyRef Name="IdMembru" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="M_CONTURI">
+          <End Role="Membri Asociatie" Type="Self.Membri Asociatie" Multiplicity="1" />
+          <End Role="Conturi de Utilizator" Type="Self.Conturi de Utilizator" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Membri Asociatie">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Conturi de Utilizator">
               <PropertyRef Name="IdMembru" />
             </Dependent>
           </ReferentialConstraint>
@@ -662,6 +670,7 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
           <EntitySet Name="ApaRece" EntityType="Self.ApaRece" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Apartamente" EntityType="Self.Apartamente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Canalizare" EntityType="Self.Canalizare" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Carduri" EntityType="Self.Carduri" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Coduri" EntityType="Self.Coduri" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Contracte Individuale" EntityType="Self.Contracte Individuale" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Conturi de Utilizator" EntityType="Self.Conturi de Utilizator" Schema="dbo" store:Type="Tables" />
@@ -676,7 +685,6 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
           <EntitySet Name="Fond Rulment" EntityType="Self.Fond Rulment" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Furnizori" EntityType="Self.Furnizori" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Gaz" EntityType="Self.Gaz" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Juranal" EntityType="Self.Juranal" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Lift" EntityType="Self.Lift" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Locatari" EntityType="Self.Locatari" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Membri Asociatie" EntityType="Self.Membri Asociatie" Schema="dbo" store:Type="Tables" />
@@ -685,13 +693,6 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
           <EntitySet Name="Salubritate" EntityType="Self.Salubritate" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Venituri" EntityType="Self.Venituri" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Avansuri de Plata" EntityType="Self.Avansuri de Plata" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Avansuri de Plata].[Index] AS [Index], 
-    [Avansuri de Plata].[IdMembru] AS [IdMembru], 
-    [Avansuri de Plata].[Avansuri] AS [Avansuri]
-    FROM [dbo].[Avansuri de Plata] AS [Avansuri de Plata]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="A_AC" Association="Self.A_AC">
             <End Role="Apartamente" EntitySet="Apartamente" />
             <End Role="ApaCalda" EntitySet="ApaCalda" />
@@ -764,17 +765,21 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
             <End Role="Apartamente" EntitySet="Apartamente" />
             <End Role="Fond Reparatii" EntitySet="Fond Reparatii" />
           </AssociationSet>
-          <AssociationSet Name="FK_Conturi de Utilizator_Membri Asociatie" Association="Self.FK_Conturi de Utilizator_Membri Asociatie">
-            <End Role="Membri Asociatie" EntitySet="Membri Asociatie" />
-            <End Role="Conturi de Utilizator" EntitySet="Conturi de Utilizator" />
+          <AssociationSet Name="F_Facturi" Association="Self.F_Facturi">
+            <End Role="Furnizori" EntitySet="Furnizori" />
+            <End Role="Facturi Furnizori" EntitySet="Facturi Furnizori" />
           </AssociationSet>
           <AssociationSet Name="Fur_restante" Association="Self.Fur_restante">
             <End Role="Facturi Clienti" EntitySet="Facturi Clienti" />
             <End Role="Restante" EntitySet="Restante" />
           </AssociationSet>
-          <AssociationSet Name="Mmb_Avans" Association="Self.Mmb_Avans">
+          <AssociationSet Name="M_CARD" Association="Self.M_CARD">
             <End Role="Membri Asociatie" EntitySet="Membri Asociatie" />
-            <End Role="Avansuri de Plata" EntitySet="Avansuri de Plata" />
+            <End Role="Carduri" EntitySet="Carduri" />
+          </AssociationSet>
+          <AssociationSet Name="M_CONTURI" Association="Self.M_CONTURI">
+            <End Role="Membri Asociatie" EntitySet="Membri Asociatie" />
+            <End Role="Conturi de Utilizator" EntitySet="Conturi de Utilizator" />
           </AssociationSet>
           <AssociationSet Name="PRO_AP" Association="Self.PRO_AP">
             <End Role="Membri Asociatie" EntitySet="Membri Asociatie" />
@@ -832,6 +837,7 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
           <Property Name="Consum" Type="Int32" Nullable="false" />
           <Property Name="Pret_m_cub" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="Suma_de_plata" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Data_emitere" Type="DateTime" Precision="0" />
           <NavigationProperty Name="Apartamente" Relationship="Self.AP_AR" FromRole="ApaRece" ToRole="Apartamente" />
         </EntityType>
         <EntityType Name="Apartamente">
@@ -873,6 +879,17 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
           <Property Name="Data_emitere" Type="DateTime" Nullable="false" Precision="0" />
           <NavigationProperty Name="Apartamente" Relationship="Self.A_C" FromRole="Canalizare" ToRole="Apartamente" />
         </EntityType>
+        <EntityType Name="Carduri">
+          <Key>
+            <PropertyRef Name="Index" />
+          </Key>
+          <Property Name="Index" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdMembru" Type="Int32" Nullable="false" />
+          <Property Name="Numar_Card" Type="String" MaxLength="17" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="CVC" Type="Int32" Nullable="false" />
+          <Property Name="Data_Expirare" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Membri_Asociatie" Relationship="Self.M_CARD" FromRole="Carduri" ToRole="Membri_Asociatie" />
+        </EntityType>
         <EntityType Name="Coduri">
           <Key>
             <PropertyRef Name="Index" />
@@ -887,18 +904,19 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
           <Property Name="Index" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IdApartament" Type="Int32" Nullable="false" />
           <Property Name="Serviciu" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Data" Type="DateTime" Nullable="false" Precision="0" />
           <NavigationProperty Name="Apartamente" Relationship="Self.A_CNN" FromRole="Contracte_Individuale" ToRole="Apartamente" />
         </EntityType>
         <EntityType Name="Conturi_de_Utilizator">
           <Key>
             <PropertyRef Name="Index" />
           </Key>
-          <Property Name="Index" Type="Int32" Nullable="false" />
-          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Parola" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="IDMembru" Type="Int32" Nullable="false" />
-          <Property Name="TipCont" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Membri_Asociatie" Relationship="Self.FK_Conturi_de_Utilizator_Membri_Asociatie" FromRole="Conturi_de_Utilizator" ToRole="Membri_Asociatie" />
+          <Property Name="Index" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Parola" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdMembru" Type="Int32" Nullable="false" />
+          <Property Name="Tip" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Membri_Asociatie" Relationship="Self.M_CONTURI" FromRole="Conturi_de_Utilizator" ToRole="Membri_Asociatie" />
         </EntityType>
         <EntityType Name="Cota_Parte">
           <Key>
@@ -929,15 +947,15 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
           <Property Name="IdAngajat" Type="Int32" Nullable="false" />
           <Property Name="CNP" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="Data_Angajare" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Vechime" Type="Int32" />
+          <Property Name="Vechime" Type="Int32" Nullable="false" />
           <Property Name="Numar_telefon" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="Localitate" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="Strada" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Numar" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="Bloc" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="Scara" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="Etaj" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="Apartament" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Numar" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Bloc" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Scara" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Etaj" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Apartament" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Angajati" Relationship="Self.A_Da" FromRole="Date_Angajati" ToRole="Angajati" />
         </EntityType>
         <EntityType Name="EnergieElecrica_pe_scara">
@@ -962,13 +980,14 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
           <Property Name="Consum" Type="Int32" Nullable="false" />
           <Property Name="Pret_Kw" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="Suma_de_plata" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Data_emitere" Type="DateTime" Precision="0" />
           <NavigationProperty Name="Apartamente" Relationship="Self.A_EC" FromRole="EnergieElectrica" ToRole="Apartamente" />
         </EntityType>
         <EntityType Name="Facturi_Clienti">
           <Key>
-            <PropertyRef Name="CUI" />
+            <PropertyRef Name="ID" />
           </Key>
-          <Property Name="CUI" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="Nume" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="Prenume" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="IdApartament" Type="Int32" Nullable="false" />
@@ -976,22 +995,25 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
           <Property Name="Data_emitere" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Data_Scadenta" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Perioada_Facturare" Type="Int32" Nullable="false" />
-          <Property Name="Achitat" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Achitat" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Data_Achitare" Type="DateTime" Precision="0" />
           <NavigationProperty Name="Apartamente" Relationship="Self.AP_facturi_clienti" FromRole="Facturi_Clienti" ToRole="Apartamente" />
           <NavigationProperty Name="Restante" Relationship="Self.Fur_restante" FromRole="Facturi_Clienti" ToRole="Restante" />
         </EntityType>
         <EntityType Name="Facturi_Furnizori">
           <Key>
-            <PropertyRef Name="CUI" />
+            <PropertyRef Name="ID" />
           </Key>
-          <Property Name="CUI" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="Furnizor" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="CUIFurnizor" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="Cantitate_furnizata" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="Total_plata" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="Data_emitere" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Data_scadenta" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Perioada_facturare" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="Achitat" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Data_Achitare" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Furnizori" Relationship="Self.F_Facturi" FromRole="Facturi_Furnizori" ToRole="Furnizori" />
         </EntityType>
         <EntityType Name="Fond_Reparatii">
           <Key>
@@ -1017,12 +1039,13 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
           <Key>
             <PropertyRef Name="CUI" />
           </Key>
-          <Property Name="CUI" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nume" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Email" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Serviciu" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="CUI" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Nume" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Serviciu" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="Data_semnare_contract" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Data_expirare_contract" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Facturi_Furnizori" Relationship="Self.F_Facturi" FromRole="Furnizori" ToRole="Facturi_Furnizori" />
         </EntityType>
         <EntityType Name="Gaz">
           <Key>
@@ -1035,16 +1058,8 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
           <Property Name="Consum" Type="Int32" Nullable="false" />
           <Property Name="Pret_m_cub" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="Suma_de_plata" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Data_Emitere" Type="DateTime" Precision="0" />
           <NavigationProperty Name="Apartamente" Relationship="Self.A_G" FromRole="Gaz" ToRole="Apartamente" />
-        </EntityType>
-        <EntityType Name="Juranal">
-          <Key>
-            <PropertyRef Name="Index" />
-          </Key>
-          <Property Name="Index" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CUIFactura" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="Tranzactie" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Data" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
         <EntityType Name="Lift">
           <Key>
@@ -1077,10 +1092,11 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
           <Property Name="Prenume" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="Numar_telefon" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="Emai" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Functie" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="Data_Inscriere" Type="DateTime" Nullable="false" Precision="0" />
           <NavigationProperty Name="Apartamente" Relationship="Self.PRO_AP" FromRole="Membri_Asociatie" ToRole="Apartamente" />
-          <NavigationProperty Name="Conturi_de_Utilizator" Relationship="Self.FK_Conturi_de_Utilizator_Membri_Asociatie" FromRole="Membri_Asociatie" ToRole="Conturi_de_Utilizator" />
-          <NavigationProperty Name="Avansuri_de_Plata" Relationship="Self.Mmb_Avans" FromRole="Membri_Asociatie" ToRole="Avansuri_de_Plata" />
+          <NavigationProperty Name="Carduri" Relationship="Self.M_CARD" FromRole="Membri_Asociatie" ToRole="Carduri" />
+          <NavigationProperty Name="Conturi_de_Utilizator" Relationship="Self.M_CONTURI" FromRole="Membri_Asociatie" ToRole="Conturi_de_Utilizator" />
         </EntityType>
         <EntityType Name="Restante">
           <Key>
@@ -1133,17 +1149,6 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
           <Property Name="Fond_Servicii" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="Fond_rulment" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="Fond_reparatii" Type="Decimal" Precision="19" Scale="4" />
-        </EntityType>
-        <EntityType Name="Avansuri_de_Plata">
-          <Key>
-            <PropertyRef Name="Index" />
-            <PropertyRef Name="IdMembru" />
-            <PropertyRef Name="Avansuri" />
-          </Key>
-          <Property Name="Index" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdMembru" Type="Int32" Nullable="false" />
-          <Property Name="Avansuri" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-          <NavigationProperty Name="Membri_Asociatie" Relationship="Self.Mmb_Avans" FromRole="Avansuri_de_Plata" ToRole="Membri_Asociatie" />
         </EntityType>
         <Association Name="AP_AT">
           <End Role="Apartamente" Type="Self.Apartamente" Multiplicity="1">
@@ -1407,7 +1412,21 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Conturi_de_Utilizator_Membri_Asociatie">
+        <Association Name="M_CARD">
+          <End Role="Membri_Asociatie" Type="Self.Membri_Asociatie" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Carduri" Type="Self.Carduri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Membri_Asociatie">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Carduri">
+              <PropertyRef Name="IdMembru" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="M_CONTURI">
           <End Role="Membri_Asociatie" Type="Self.Membri_Asociatie" Multiplicity="1" />
           <End Role="Conturi_de_Utilizator" Type="Self.Conturi_de_Utilizator" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1415,7 +1434,7 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
               <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="Conturi_de_Utilizator">
-              <PropertyRef Name="IDMembru" />
+              <PropertyRef Name="IdMembru" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1426,24 +1445,22 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
           <End Role="Restante" Type="Self.Restante" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Facturi_Clienti">
-              <PropertyRef Name="CUI" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="Restante">
               <PropertyRef Name="CUIFactura" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="Mmb_Avans">
-          <End Role="Membri_Asociatie" Type="Self.Membri_Asociatie" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="Avansuri_de_Plata" Type="Self.Avansuri_de_Plata" Multiplicity="*" />
+        <Association Name="F_Facturi">
+          <End Role="Furnizori" Type="Self.Furnizori" Multiplicity="1" />
+          <End Role="Facturi_Furnizori" Type="Self.Facturi_Furnizori" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Membri_Asociatie">
-              <PropertyRef Name="ID" />
+            <Principal Role="Furnizori">
+              <PropertyRef Name="CUI" />
             </Principal>
-            <Dependent Role="Avansuri_de_Plata">
-              <PropertyRef Name="IdMembru" />
+            <Dependent Role="Facturi_Furnizori">
+              <PropertyRef Name="CUIFurnizor" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1454,6 +1471,7 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
           <EntitySet Name="ApaRece" EntityType="Self.ApaRece" />
           <EntitySet Name="Apartamente" EntityType="Self.Apartamente" />
           <EntitySet Name="Canalizare" EntityType="Self.Canalizare" />
+          <EntitySet Name="Carduri" EntityType="Self.Carduri" />
           <EntitySet Name="Coduri" EntityType="Self.Coduri" />
           <EntitySet Name="Contracte_Individuale" EntityType="Self.Contracte_Individuale" />
           <EntitySet Name="Conturi_de_Utilizator" EntityType="Self.Conturi_de_Utilizator" />
@@ -1468,7 +1486,6 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
           <EntitySet Name="Fond_Rulment" EntityType="Self.Fond_Rulment" />
           <EntitySet Name="Furnizori" EntityType="Self.Furnizori" />
           <EntitySet Name="Gaz" EntityType="Self.Gaz" />
-          <EntitySet Name="Juranal" EntityType="Self.Juranal" />
           <EntitySet Name="Lift" EntityType="Self.Lift" />
           <EntitySet Name="Locatari" EntityType="Self.Locatari" />
           <EntitySet Name="Membri_Asociatie" EntityType="Self.Membri_Asociatie" />
@@ -1477,7 +1494,6 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
           <EntitySet Name="Salubritate" EntityType="Self.Salubritate" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Venituri" EntityType="Self.Venituri" />
-          <EntitySet Name="Avansuri_de_Plata" EntityType="Self.Avansuri_de_Plata" />
           <AssociationSet Name="AP_AT" Association="Self.AP_AT">
             <End Role="Apartamente" EntitySet="Apartamente" />
             <End Role="Agent_Termic" EntitySet="Agent_Termic" />
@@ -1554,7 +1570,11 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
             <End Role="Membri_Asociatie" EntitySet="Membri_Asociatie" />
             <End Role="Apartamente" EntitySet="Apartamente" />
           </AssociationSet>
-          <AssociationSet Name="FK_Conturi_de_Utilizator_Membri_Asociatie" Association="Self.FK_Conturi_de_Utilizator_Membri_Asociatie">
+          <AssociationSet Name="M_CARD" Association="Self.M_CARD">
+            <End Role="Membri_Asociatie" EntitySet="Membri_Asociatie" />
+            <End Role="Carduri" EntitySet="Carduri" />
+          </AssociationSet>
+          <AssociationSet Name="M_CONTURI" Association="Self.M_CONTURI">
             <End Role="Membri_Asociatie" EntitySet="Membri_Asociatie" />
             <End Role="Conturi_de_Utilizator" EntitySet="Conturi_de_Utilizator" />
           </AssociationSet>
@@ -1562,9 +1582,9 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
             <End Role="Facturi_Clienti" EntitySet="Facturi_Clienti" />
             <End Role="Restante" EntitySet="Restante" />
           </AssociationSet>
-          <AssociationSet Name="Mmb_Avans" Association="Self.Mmb_Avans">
-            <End Role="Membri_Asociatie" EntitySet="Membri_Asociatie" />
-            <End Role="Avansuri_de_Plata" EntitySet="Avansuri_de_Plata" />
+          <AssociationSet Name="F_Facturi" Association="Self.F_Facturi">
+            <End Role="Furnizori" EntitySet="Furnizori" />
+            <End Role="Facturi_Furnizori" EntitySet="Facturi_Furnizori" />
           </AssociationSet>
           <FunctionImport Name="sp_alterdiagram">
             <Parameter Name="diagramname" Mode="In" Type="String" />
@@ -1659,6 +1679,7 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
                 <ScalarProperty Name="Consum" ColumnName="Consum" />
                 <ScalarProperty Name="Pret_m_cub" ColumnName="Pret/m cub" />
                 <ScalarProperty Name="Suma_de_plata" ColumnName="Suma de plata" />
+                <ScalarProperty Name="Data_emitere" ColumnName="Data emitere" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1684,6 +1705,17 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Carduri">
+            <EntityTypeMapping TypeName="Model.Carduri">
+              <MappingFragment StoreEntitySet="Carduri">
+                <ScalarProperty Name="Index" ColumnName="Index" />
+                <ScalarProperty Name="IdMembru" ColumnName="IdMembru" />
+                <ScalarProperty Name="Numar_Card" ColumnName="Numar Card" />
+                <ScalarProperty Name="CVC" ColumnName="CVC" />
+                <ScalarProperty Name="Data_Expirare" ColumnName="Data Expirare" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Coduri">
             <EntityTypeMapping TypeName="Model.Coduri">
               <MappingFragment StoreEntitySet="Coduri">
@@ -1698,6 +1730,7 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
                 <ScalarProperty Name="Index" ColumnName="Index" />
                 <ScalarProperty Name="IdApartament" ColumnName="IdApartament" />
                 <ScalarProperty Name="Serviciu" ColumnName="Serviciu" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1707,8 +1740,8 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
                 <ScalarProperty Name="Index" ColumnName="Index" />
                 <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="Parola" ColumnName="Parola" />
-                <ScalarProperty Name="IDMembru" ColumnName="IDMembru" />
-                <ScalarProperty Name="TipCont" ColumnName="TipCont" />
+                <ScalarProperty Name="IdMembru" ColumnName="IdMembru" />
+                <ScalarProperty Name="Tip" ColumnName="Tip" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1773,13 +1806,14 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
                 <ScalarProperty Name="Consum" ColumnName="Consum" />
                 <ScalarProperty Name="Pret_Kw" ColumnName="Pret/Kw" />
                 <ScalarProperty Name="Suma_de_plata" ColumnName="Suma de plata" />
+                <ScalarProperty Name="Data_emitere" ColumnName="Data emitere" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Facturi_Clienti">
             <EntityTypeMapping TypeName="Model.Facturi_Clienti">
               <MappingFragment StoreEntitySet="Facturi Clienti">
-                <ScalarProperty Name="CUI" ColumnName="CUI" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Nume" ColumnName="Nume" />
                 <ScalarProperty Name="Prenume" ColumnName="Prenume" />
                 <ScalarProperty Name="IdApartament" ColumnName="IdApartament" />
@@ -1788,20 +1822,22 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
                 <ScalarProperty Name="Data_Scadenta" ColumnName="Data Scadenta" />
                 <ScalarProperty Name="Perioada_Facturare" ColumnName="Perioada Facturare" />
                 <ScalarProperty Name="Achitat" ColumnName="Achitat" />
+                <ScalarProperty Name="Data_Achitare" ColumnName="Data Achitare" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Facturi_Furnizori">
             <EntityTypeMapping TypeName="Model.Facturi_Furnizori">
               <MappingFragment StoreEntitySet="Facturi Furnizori">
-                <ScalarProperty Name="CUI" ColumnName="CUI" />
-                <ScalarProperty Name="Furnizor" ColumnName="Furnizor" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CUIFurnizor" ColumnName="CUIFurnizor" />
                 <ScalarProperty Name="Cantitate_furnizata" ColumnName="Cantitate furnizata" />
                 <ScalarProperty Name="Total_plata" ColumnName="Total plata" />
                 <ScalarProperty Name="Data_emitere" ColumnName="Data emitere" />
                 <ScalarProperty Name="Data_scadenta" ColumnName="Data scadenta" />
                 <ScalarProperty Name="Perioada_facturare" ColumnName="Perioada facturare" />
                 <ScalarProperty Name="Achitat" ColumnName="Achitat" />
+                <ScalarProperty Name="Data_Achitare" ColumnName="Data Achitare" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1847,16 +1883,7 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
                 <ScalarProperty Name="Consum" ColumnName="Consum" />
                 <ScalarProperty Name="Pret_m_cub" ColumnName="Pret/m cub" />
                 <ScalarProperty Name="Suma_de_plata" ColumnName="Suma de plata" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Juranal">
-            <EntityTypeMapping TypeName="Model.Juranal">
-              <MappingFragment StoreEntitySet="Juranal">
-                <ScalarProperty Name="Index" ColumnName="Index" />
-                <ScalarProperty Name="CUIFactura" ColumnName="CUIFactura" />
-                <ScalarProperty Name="Tranzactie" ColumnName="Tranzactie" />
-                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="Data_Emitere" ColumnName="Data Emitere" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1890,6 +1917,7 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
                 <ScalarProperty Name="Prenume" ColumnName="Prenume" />
                 <ScalarProperty Name="Numar_telefon" ColumnName="Numar telefon" />
                 <ScalarProperty Name="Emai" ColumnName="Emai" />
+                <ScalarProperty Name="Functie" ColumnName="Functie" />
                 <ScalarProperty Name="Data_Inscriere" ColumnName="Data Inscriere" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1945,15 +1973,6 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Avansuri de Plata' does 
                 <ScalarProperty Name="Fond_Servicii" ColumnName="Fond Servicii" />
                 <ScalarProperty Name="Fond_rulment" ColumnName="Fond rulment" />
                 <ScalarProperty Name="Fond_reparatii" ColumnName="Fond reparatii" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Avansuri_de_Plata">
-            <EntityTypeMapping TypeName="Model.Avansuri_de_Plata">
-              <MappingFragment StoreEntitySet="Avansuri de Plata">
-                <ScalarProperty Name="Index" ColumnName="Index" />
-                <ScalarProperty Name="IdMembru" ColumnName="IdMembru" />
-                <ScalarProperty Name="Avansuri" ColumnName="Avansuri" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

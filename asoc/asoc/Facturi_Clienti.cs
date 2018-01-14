@@ -20,7 +20,7 @@ namespace asoc
             this.Restante = new HashSet<Restante>();
         }
     
-        public decimal CUI { get; set; }
+        public decimal ID { get; set; }
         public string Nume { get; set; }
         public string Prenume { get; set; }
         public int IdApartament { get; set; }
@@ -29,6 +29,7 @@ namespace asoc
         public System.DateTime Data_Scadenta { get; set; }
         public int Perioada_Facturare { get; set; }
         public string Achitat { get; set; }
+        public Nullable<System.DateTime> Data_Achitare { get; set; }
     
         public virtual Apartamente Apartamente { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

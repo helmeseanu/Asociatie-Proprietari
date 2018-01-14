@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -55,76 +56,67 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Agent_Termic.cs">
-      <DependentUpon>AsociatieProprietariModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Angajati.cs">
-      <DependentUpon>AsociatieProprietariModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ApaCalda.cs">
-      <DependentUpon>AsociatieProprietariModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ApaRece.cs">
-      <DependentUpon>AsociatieProprietariModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Apartamente.cs">
-      <DependentUpon>AsociatieProprietariModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AsociatieProprietariModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AsociatieProprietariModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AsociatieProprietariModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AsociatieProprietariModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AsociatieProprietariModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AsociatieProprietariModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Avansuri_de_Plata.cs">
-      <DependentUpon>AsociatieProprietariModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Canalizare.cs">
-      <DependentUpon>AsociatieProprietariModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Carduri.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Choose_form_furnizori.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Choose_form_furnizori.Designer.cs">
+      <DependentUpon>Choose_form_furnizori.cs</DependentUpon>
     </Compile>
     <Compile Include="Coduri.cs">
-      <DependentUpon>AsociatieProprietariModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Contracte_Individuale.cs">
-      <DependentUpon>AsociatieProprietariModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Conturi_de_Utilizator.cs">
-      <DependentUpon>AsociatieProprietariModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Cota_Parte.cs">
-      <DependentUpon>AsociatieProprietariModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Curatenie.cs">
-      <DependentUpon>AsociatieProprietariModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Date_Angajati.cs">
-      <DependentUpon>AsociatieProprietariModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="EnergieElecrica_pe_scara.cs">
-      <DependentUpon>AsociatieProprietariModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="EnergieElectrica.cs">
-      <DependentUpon>AsociatieProprietariModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Facturi_Clienti.cs">
-      <DependentUpon>AsociatieProprietariModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Facturi_Furnizori.cs">
-      <DependentUpon>AsociatieProprietariModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Fond_Reparatii.cs">
-      <DependentUpon>AsociatieProprietariModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Fond_Rulment.cs">
-      <DependentUpon>AsociatieProprietariModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -132,23 +124,53 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAdaugareFurnizor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdaugareFurnizor.Designer.cs">
+      <DependentUpon>FormAdaugareFurnizor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormStergeFurnizor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStergeFurnizor.Designer.cs">
+      <DependentUpon>FormStergeFurnizor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVizualizareFurnizori.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVizualizareFurnizori.Designer.cs">
+      <DependentUpon>FormVizualizareFurnizori.cs</DependentUpon>
+    </Compile>
     <Compile Include="Furnizori.cs">
-      <DependentUpon>AsociatieProprietariModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Gaz.cs">
-      <DependentUpon>AsociatieProprietariModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Juranal.cs">
-      <DependentUpon>AsociatieProprietariModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Lift.cs">
-      <DependentUpon>AsociatieProprietariModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Locatari.cs">
-      <DependentUpon>AsociatieProprietariModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Membri_Asociatie.cs">
-      <DependentUpon>AsociatieProprietariModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -159,34 +181,40 @@
       <DependentUpon>registerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Restante.cs">
-      <DependentUpon>AsociatieProprietariModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Salarii_Angajati.cs">
-      <DependentUpon>AsociatieProprietariModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Salubritate.cs">
-      <DependentUpon>AsociatieProprietariModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>AsociatieProprietariModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="sp_helpdiagrams_Result.cs">
-      <DependentUpon>AsociatieProprietariModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="sysdiagrams.cs">
-      <DependentUpon>AsociatieProprietariModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="User_Form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="User_Form.Designer.cs">
-      <DependentUpon>User_Form.cs</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Venituri.cs">
-      <DependentUpon>AsociatieProprietariModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Choose_form_furnizori.resx">
+      <DependentUpon>Choose_form_furnizori.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdaugareFurnizor.resx">
+      <DependentUpon>FormAdaugareFurnizor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStergeFurnizor.resx">
+      <DependentUpon>FormStergeFurnizor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVizualizareFurnizori.resx">
+      <DependentUpon>FormVizualizareFurnizori.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -196,19 +224,17 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="registerForm.resx">
       <DependentUpon>registerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User_Form.resx">
-      <DependentUpon>User_Form.cs</DependentUpon>
-    </EmbeddedResource>
-    <EntityDeploy Include="AsociatieProprietariModel.edmx">
+    <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AsociatieProprietariModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="AsociatieProprietariModel.edmx.diagram">
-      <DependentUpon>AsociatieProprietariModel.edmx</DependentUpon>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -228,16 +254,24 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AsociatieProprietariModel.Context.tt">
+    <None Include="Resources\error.png" />
+    <None Include="Resources\user_register_blue.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AsociatieProprietariModel.edmx</DependentUpon>
-      <LastGenOutput>AsociatieProprietariModel.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="AsociatieProprietariModel.tt">
+    <Content Include="Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AsociatieProprietariModel.edmx</DependentUpon>
-      <LastGenOutput>AsociatieProprietariModel.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\Modificare_furnizor.png" />
+    <None Include="Resources\Read_furnizori.png" />
+    <None Include="Resources\Remove_furnizor.png" />
+    <None Include="Resources\Adauga_furnizor.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
