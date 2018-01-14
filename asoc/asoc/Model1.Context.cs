@@ -33,6 +33,7 @@ namespace asoc
         public virtual DbSet<ApaRece> ApaRece { get; set; }
         public virtual DbSet<Apartamente> Apartamente { get; set; }
         public virtual DbSet<Canalizare> Canalizare { get; set; }
+        public virtual DbSet<Carduri> Carduri { get; set; }
         public virtual DbSet<Coduri> Coduri { get; set; }
         public virtual DbSet<Contracte_Individuale> Contracte_Individuale { get; set; }
         public virtual DbSet<Conturi_de_Utilizator> Conturi_de_Utilizator { get; set; }
@@ -47,7 +48,6 @@ namespace asoc
         public virtual DbSet<Fond_Rulment> Fond_Rulment { get; set; }
         public virtual DbSet<Furnizori> Furnizori { get; set; }
         public virtual DbSet<Gaz> Gaz { get; set; }
-        public virtual DbSet<Juranal> Juranal { get; set; }
         public virtual DbSet<Lift> Lift { get; set; }
         public virtual DbSet<Locatari> Locatari { get; set; }
         public virtual DbSet<Membri_Asociatie> Membri_Asociatie { get; set; }
@@ -56,7 +56,6 @@ namespace asoc
         public virtual DbSet<Salubritate> Salubritate { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Venituri> Venituri { get; set; }
-        public virtual DbSet<Avansuri_de_Plata> Avansuri_de_Plata { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

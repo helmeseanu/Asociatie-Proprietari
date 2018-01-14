@@ -18,8 +18,8 @@ namespace asoc
         public Membri_Asociatie()
         {
             this.Apartamente = new HashSet<Apartamente>();
+            this.Carduri = new HashSet<Carduri>();
             this.Conturi_de_Utilizator = new HashSet<Conturi_de_Utilizator>();
-            this.Avansuri_de_Plata = new HashSet<Avansuri_de_Plata>();
         }
     
         public int ID { get; set; }
@@ -27,13 +27,14 @@ namespace asoc
         public string Prenume { get; set; }
         public string Numar_telefon { get; set; }
         public string Emai { get; set; }
+        public string Functie { get; set; }
         public System.DateTime Data_Inscriere { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Apartamente> Apartamente { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Conturi_de_Utilizator> Conturi_de_Utilizator { get; set; }
+        public virtual ICollection<Carduri> Carduri { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Avansuri_de_Plata> Avansuri_de_Plata { get; set; }
+        public virtual ICollection<Conturi_de_Utilizator> Conturi_de_Utilizator { get; set; }
     }
 }

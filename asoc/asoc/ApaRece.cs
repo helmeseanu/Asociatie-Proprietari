@@ -21,6 +21,7 @@ namespace asoc
         public int Consum { get; set; }
         public decimal Pret_m_cub { get; set; }
         public decimal Suma_de_plata { get; set; }
+        public Nullable<System.DateTime> Data_emitere { get; set; }
     
         public virtual Apartamente Apartamente { get; set; }
     }

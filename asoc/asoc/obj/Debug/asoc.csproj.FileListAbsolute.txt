@@ -13,3 +13,8 @@ E:\Asociatie-Proprietari\asoc\asoc\obj\Debug\asoc.csproj.CoreCompileInputs.cache
 E:\Asociatie-Proprietari\asoc\asoc\obj\Debug\asoc.exe
 E:\Asociatie-Proprietari\asoc\asoc\obj\Debug\asoc.pdb
 E:\Asociatie-Proprietari\asoc\asoc\obj\Debug\asoc.registerForm.resources
+E:\Asociatie-Proprietari\asoc\asoc\obj\Debug\asoc.User_Form.resources
+E:\Asociatie-Proprietari\asoc\asoc\obj\Debug\asoc.Choose_form_furnizori.resources
+E:\Asociatie-Proprietari\asoc\asoc\obj\Debug\asoc.FormVizualizareFurnizori.resources
+E:\Asociatie-Proprietari\asoc\asoc\obj\Debug\asoc.FormAdaugareFurnizor.resources
+E:\Asociatie-Proprietari\asoc\asoc\obj\Debug\asoc.FormStergeFurnizor.resources

@@ -35,6 +35,11 @@
             this.register_button = new System.Windows.Forms.Button();
             this.user_textbox = new System.Windows.Forms.MaskedTextBox();
             this.login_button = new System.Windows.Forms.Button();
+            this.panel_cod = new System.Windows.Forms.Panel();
+            this.button_cod = new System.Windows.Forms.Button();
+            this.textBox_cod = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel_cod.SuspendLayout();
             this.SuspendLayout();
             // 
             // password_textbox
@@ -95,6 +100,44 @@
             this.login_button.UseVisualStyleBackColor = true;
             this.login_button.Click += new System.EventHandler(this.login_button_Click);
             // 
+            // panel_cod
+            // 
+            this.panel_cod.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_cod.Controls.Add(this.textBox_cod);
+            this.panel_cod.Controls.Add(this.button_cod);
+            this.panel_cod.Location = new System.Drawing.Point(142, 82);
+            this.panel_cod.Name = "panel_cod";
+            this.panel_cod.Size = new System.Drawing.Size(233, 116);
+            this.panel_cod.TabIndex = 8;
+            // 
+            // button_cod
+            // 
+            this.button_cod.Location = new System.Drawing.Point(130, 42);
+            this.button_cod.Name = "button_cod";
+            this.button_cod.Size = new System.Drawing.Size(75, 20);
+            this.button_cod.TabIndex = 0;
+            this.button_cod.Text = "Verifica";
+            this.button_cod.UseVisualStyleBackColor = true;
+            this.button_cod.Click += new System.EventHandler(this.button_cod_Click);
+            // 
+            // textBox_cod
+            // 
+            this.textBox_cod.Location = new System.Drawing.Point(13, 42);
+            this.textBox_cod.Name = "textBox_cod";
+            this.textBox_cod.Size = new System.Drawing.Size(111, 20);
+            this.textBox_cod.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(54, 224);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 20);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Verifica";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // AsociatieProprietari
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -102,6 +145,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(479, 267);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.panel_cod);
             this.Controls.Add(this.login_button);
             this.Controls.Add(this.user_textbox);
             this.Controls.Add(this.register_button);
@@ -114,6 +159,8 @@
             this.Padding = new System.Windows.Forms.Padding(20);
             this.Text = "Asociatie Proprietari";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.panel_cod.ResumeLayout(false);
+            this.panel_cod.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,6 +173,10 @@
         private System.Windows.Forms.Button register_button;
         private System.Windows.Forms.MaskedTextBox user_textbox;
         private System.Windows.Forms.Button login_button;
+        private System.Windows.Forms.Panel panel_cod;
+        private System.Windows.Forms.TextBox textBox_cod;
+        private System.Windows.Forms.Button button_cod;
+        private System.Windows.Forms.Button button1;
     }
 }
 

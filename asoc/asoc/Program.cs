@@ -16,7 +16,7 @@ namespace asoc
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AsociatieProprietari());
+            Application.Run(new Choose_form_furnizori());
         }
     }
 }
