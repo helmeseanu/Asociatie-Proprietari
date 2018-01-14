@@ -18,9 +18,10 @@ namespace asoc
         public int IdApartament { get; set; }
         public decimal Index_Vechi { get; set; }
         public decimal Index_Nou { get; set; }
-        public int Consum { get; set; }
+        public decimal Consum { get; set; }
         public decimal Pret_m_cub { get; set; }
         public decimal Suma_de_plata { get; set; }
+        public System.DateTime Data_Emitere { get; set; }
     
         public virtual Apartamente Apartamente { get; set; }
     }

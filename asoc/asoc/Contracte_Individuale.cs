@@ -17,6 +17,7 @@ namespace asoc
         public int Index { get; set; }
         public int IdApartament { get; set; }
         public string Serviciu { get; set; }
+        public System.DateTime Data { get; set; }
     
         public virtual Apartamente Apartamente { get; set; }
     }

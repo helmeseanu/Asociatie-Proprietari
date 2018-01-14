@@ -10,17 +10,10 @@
 namespace asoc
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Restante
+    public partial class detaliiFactuaCotaParte1_Result
     {
-        public int Index { get; set; }
-        public decimal IDFactura { get; set; }
-        public decimal Restante1 { get; set; }
-        public int Penalizari_zi { get; set; }
-        public int Zile_de_penalizare { get; set; }
-        public string Data_curenta { get; set; }
-    
-        public virtual Facturi_Clienti Facturi_Clienti { get; set; }
+        public string Serviciu { get; set; }
+        public decimal Suma_de_plata { get; set; }
     }
 }

@@ -33,6 +33,7 @@ namespace asoc
         public virtual DbSet<ApaRece> ApaRece { get; set; }
         public virtual DbSet<Apartamente> Apartamente { get; set; }
         public virtual DbSet<Canalizare> Canalizare { get; set; }
+        public virtual DbSet<Carduri> Carduri { get; set; }
         public virtual DbSet<Coduri> Coduri { get; set; }
         public virtual DbSet<Contracte_Individuale> Contracte_Individuale { get; set; }
         public virtual DbSet<Conturi_de_Utilizator> Conturi_de_Utilizator { get; set; }
@@ -47,7 +48,6 @@ namespace asoc
         public virtual DbSet<Fond_Rulment> Fond_Rulment { get; set; }
         public virtual DbSet<Furnizori> Furnizori { get; set; }
         public virtual DbSet<Gaz> Gaz { get; set; }
-        public virtual DbSet<Juranal> Juranal { get; set; }
         public virtual DbSet<Lift> Lift { get; set; }
         public virtual DbSet<Locatari> Locatari { get; set; }
         public virtual DbSet<Membri_Asociatie> Membri_Asociatie { get; set; }
@@ -56,7 +56,62 @@ namespace asoc
         public virtual DbSet<Salubritate> Salubritate { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Venituri> Venituri { get; set; }
-        public virtual DbSet<Avansuri_de_Plata> Avansuri_de_Plata { get; set; }
+    
+        public virtual ObjectResult<detaliiFactuaCotaParte_Result> detaliiFactuaCotaParte(string luna_facturare, Nullable<int> id_apartament, string an_facturare)
+        {
+            var luna_facturareParameter = luna_facturare != null ?
+                new ObjectParameter("luna_facturare", luna_facturare) :
+                new ObjectParameter("luna_facturare", typeof(string));
+    
+            var id_apartamentParameter = id_apartament.HasValue ?
+                new ObjectParameter("id_apartament", id_apartament) :
+                new ObjectParameter("id_apartament", typeof(int));
+    
+            var an_facturareParameter = an_facturare != null ?
+                new ObjectParameter("an_facturare", an_facturare) :
+                new ObjectParameter("an_facturare", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<detaliiFactuaCotaParte_Result>("detaliiFactuaCotaParte", luna_facturareParameter, id_apartamentParameter, an_facturareParameter);
+        }
+    
+        public virtual ObjectResult<detaliiFactura_Result> detaliiFactura(string perioada_facturare, Nullable<int> id_apartament)
+        {
+            var perioada_facturareParameter = perioada_facturare != null ?
+                new ObjectParameter("perioada_facturare", perioada_facturare) :
+                new ObjectParameter("perioada_facturare", typeof(string));
+    
+            var id_apartamentParameter = id_apartament.HasValue ?
+                new ObjectParameter("id_apartament", id_apartament) :
+                new ObjectParameter("id_apartament", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<detaliiFactura_Result>("detaliiFactura", perioada_facturareParameter, id_apartamentParameter);
+        }
+    
+        public virtual ObjectResult<detaliiFacturaCurenta_Result> detaliiFacturaCurenta(string luna_facturare, Nullable<int> id_apartament, string an_facturare)
+        {
+            var luna_facturareParameter = luna_facturare != null ?
+                new ObjectParameter("luna_facturare", luna_facturare) :
+                new ObjectParameter("luna_facturare", typeof(string));
+    
+            var id_apartamentParameter = id_apartament.HasValue ?
+                new ObjectParameter("id_apartament", id_apartament) :
+                new ObjectParameter("id_apartament", typeof(int));
+    
+            var an_facturareParameter = an_facturare != null ?
+                new ObjectParameter("an_facturare", an_facturare) :
+                new ObjectParameter("an_facturare", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<detaliiFacturaCurenta_Result>("detaliiFacturaCurenta", luna_facturareParameter, id_apartamentParameter, an_facturareParameter);
+        }
+    
+        public virtual ObjectResult<detaliiRestanta_Result> detaliiRestanta(Nullable<int> numar_apartament)
+        {
+            var numar_apartamentParameter = numar_apartament.HasValue ?
+                new ObjectParameter("numar_apartament", numar_apartament) :
+                new ObjectParameter("numar_apartament", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<detaliiRestanta_Result>("detaliiRestanta", numar_apartamentParameter);
+        }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {
@@ -159,6 +214,66 @@ namespace asoc
         public virtual int sp_upgraddiagrams()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
+        }
+    
+        public virtual ObjectResult<detaliiFactura1_Result> detaliiFactura1(string luna_facturare, Nullable<int> id_apartament, string an_facturare)
+        {
+            var luna_facturareParameter = luna_facturare != null ?
+                new ObjectParameter("luna_facturare", luna_facturare) :
+                new ObjectParameter("luna_facturare", typeof(string));
+    
+            var id_apartamentParameter = id_apartament.HasValue ?
+                new ObjectParameter("id_apartament", id_apartament) :
+                new ObjectParameter("id_apartament", typeof(int));
+    
+            var an_facturareParameter = an_facturare != null ?
+                new ObjectParameter("an_facturare", an_facturare) :
+                new ObjectParameter("an_facturare", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<detaliiFactura1_Result>("detaliiFactura1", luna_facturareParameter, id_apartamentParameter, an_facturareParameter);
+        }
+    
+        public virtual ObjectResult<detaliiFacturiCotaParte_Result> detaliiFacturiCotaParte(string luna_facturare, Nullable<int> id_apartament, string an_facturare)
+        {
+            var luna_facturareParameter = luna_facturare != null ?
+                new ObjectParameter("luna_facturare", luna_facturare) :
+                new ObjectParameter("luna_facturare", typeof(string));
+    
+            var id_apartamentParameter = id_apartament.HasValue ?
+                new ObjectParameter("id_apartament", id_apartament) :
+                new ObjectParameter("id_apartament", typeof(int));
+    
+            var an_facturareParameter = an_facturare != null ?
+                new ObjectParameter("an_facturare", an_facturare) :
+                new ObjectParameter("an_facturare", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<detaliiFacturiCotaParte_Result>("detaliiFacturiCotaParte", luna_facturareParameter, id_apartamentParameter, an_facturareParameter);
+        }
+    
+        public virtual ObjectResult<detaliiFactuaCotaParte1_Result> detaliiFactuaCotaParte1(string luna_facturare, Nullable<int> id_apartament, string an_facturare)
+        {
+            var luna_facturareParameter = luna_facturare != null ?
+                new ObjectParameter("luna_facturare", luna_facturare) :
+                new ObjectParameter("luna_facturare", typeof(string));
+    
+            var id_apartamentParameter = id_apartament.HasValue ?
+                new ObjectParameter("id_apartament", id_apartament) :
+                new ObjectParameter("id_apartament", typeof(int));
+    
+            var an_facturareParameter = an_facturare != null ?
+                new ObjectParameter("an_facturare", an_facturare) :
+                new ObjectParameter("an_facturare", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<detaliiFactuaCotaParte1_Result>("detaliiFactuaCotaParte1", luna_facturareParameter, id_apartamentParameter, an_facturareParameter);
+        }
+    
+        public virtual ObjectResult<detaliiRestante1_Result> detaliiRestante1(Nullable<int> numar_apartament)
+        {
+            var numar_apartamentParameter = numar_apartament.HasValue ?
+                new ObjectParameter("numar_apartament", numar_apartament) :
+                new ObjectParameter("numar_apartament", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<detaliiRestante1_Result>("detaliiRestante1", numar_apartamentParameter);
         }
     }
 }

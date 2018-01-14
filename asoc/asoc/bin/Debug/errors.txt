@@ -1,0 +1,58 @@
+Message :String was not recognized as a valid DateTime.<br/>
+StackTrace :   at System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.DateTime.Parse(String s)
+   at asoc.User_Form.button_trimite_Click(Object sender, EventArgs e) in C:\Users\Jitariu\Documents\GitHub\Asociatie-Proprietari\asoc\asoc\User_Form.cs:line 114
+Date :1/13/2018 1:54:52 PM
+-----------------------------------------------------------------------------
+Message :The string was not recognized as a valid DateTime. There is an unknown word starting at index 0.<br/>
+StackTrace :   at System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.DateTime.Parse(String s)
+   at asoc.User_Form.button_trimite_Click(Object sender, EventArgs e) in C:\Users\Jitariu\Documents\GitHub\Asociatie-Proprietari\asoc\asoc\User_Form.cs:line 114
+Date :1/13/2018 1:55:09 PM
+-----------------------------------------------------------------------------
+Message :The string was not recognized as a valid DateTime. There is an unknown word starting at index 0.<br/>
+StackTrace :   at System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.DateTime.Parse(String s)
+   at asoc.User_Form.button_trimite_Click(Object sender, EventArgs e) in C:\Users\Jitariu\Documents\GitHub\Asociatie-Proprietari\asoc\asoc\User_Form.cs:line 110
+Date :1/13/2018 1:59:24 PM
+-----------------------------------------------------------------------------
+Message :The string was not recognized as a valid DateTime. There is an unknown word starting at index 0.<br/>
+StackTrace :   at System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.DateTime.Parse(String s)
+   at asoc.User_Form.button_trimite_Click(Object sender, EventArgs e) in C:\Users\Jitariu\Documents\GitHub\Asociatie-Proprietari\asoc\asoc\User_Form.cs:line 119
+Date :1/13/2018 2:39:25 PM
+-----------------------------------------------------------------------------
+Message :String was not recognized as a valid DateTime.<br/>
+StackTrace :   at System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.DateTime.Parse(String s)
+   at asoc.User_Form.button_trimite_Click(Object sender, EventArgs e) in C:\Users\Jitariu\Documents\GitHub\Asociatie-Proprietari\asoc\asoc\User_Form.cs:line 119
+Date :1/13/2018 2:41:07 PM
+-----------------------------------------------------------------------------
+Message :An error occurred while updating the entries. See the inner exception for details.<br/>
+StackTrace :   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at asoc.User_Form.button_trimite_Click(Object sender, EventArgs e) in C:\Users\Jitariu\Documents\GitHub\Asociatie-Proprietari\asoc\asoc\User_Form.cs:line 125
+Date :1/13/2018 6:58:05 PM
+-----------------------------------------------------------------------------
+Message :An error occurred while updating the entries. See the inner exception for details.<br/>
+StackTrace :   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at asoc.User_Form.button_trimite_Click(Object sender, EventArgs e) in C:\Users\Jitariu\Documents\GitHub\Asociatie-Proprietari\asoc\asoc\User_Form.cs:line 125
+Date :1/13/2018 6:58:33 PM
+-----------------------------------------------------------------------------
+Message :An error occurred while updating the entries. See the inner exception for details.<br/>
+StackTrace :   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at asoc.User_Form.button_trimite_Click(Object sender, EventArgs e) in C:\Users\Jitariu\Documents\GitHub\Asociatie-Proprietari\asoc\asoc\User_Form.cs:line 125
+Date :1/13/2018 6:59:31 PM
+-----------------------------------------------------------------------------
+Message :An error occurred while updating the entries. See the inner exception for details.<br/>
+StackTrace :   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at asoc.User_Form.button_trimite_Click(Object sender, EventArgs e) in C:\Users\Jitariu\Documents\GitHub\Asociatie-Proprietari\asoc\asoc\User_Form.cs:line 125
+Date :1/13/2018 7:00:55 PM
+-----------------------------------------------------------------------------

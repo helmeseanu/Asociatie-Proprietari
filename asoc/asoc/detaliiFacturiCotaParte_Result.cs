@@ -10,13 +10,10 @@
 namespace asoc
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Juranal
+    public partial class detaliiFacturiCotaParte_Result
     {
-        public int Index { get; set; }
-        public decimal CUIFactura { get; set; }
-        public string Tranzactie { get; set; }
-        public System.DateTime Data { get; set; }
+        public decimal Suma_de_plata { get; set; }
+        public string Serviciu { get; set; }
     }
 }

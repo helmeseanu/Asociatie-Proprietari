@@ -1,5 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Agent Termic">
+    <Key>
+      <PropertyRef Name="Index" />
+    </Key>
+    <Property Name="Index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdApartament" Type="int" Nullable="false" />
+    <Property Name="Suma de plata" Type="money" Nullable="false" />
+    <Property Name="Data emitere" Type="date" Nullable="false" />
+  </EntityType>
   <EntityType Name="Angajati">
     <Key>
       <PropertyRef Name="ID" />
@@ -10,49 +19,31 @@
     <Property Name="Functie" Type="nchar" MaxLength="20" Nullable="false" />
     <Property Name="Salariu/luna" Type="money" Nullable="false" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'Asociatie Proprietari.dbo.ApaCalda' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="ApaCalda">
     <Key>
-      <PropertyRef Name="ID" />
-      <PropertyRef Name="IdApartament" />
-      <PropertyRef Name="IdResursa" />
-      <PropertyRef Name="Index Vechi" />
-      <PropertyRef Name="Index Nou" />
-      <PropertyRef Name="Consum" />
-      <PropertyRef Name="Pret/m cub" />
-      <PropertyRef Name="Total Plata" />
+      <PropertyRef Name="Index" />
     </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="IdApartament" Type="int" Nullable="false" />
-    <Property Name="IdResursa" Type="int" Nullable="false" />
     <Property Name="Index Vechi" Type="numeric" Precision="18" Scale="0" Nullable="false" />
     <Property Name="Index Nou" Type="numeric" Precision="18" Scale="0" Nullable="false" />
-    <Property Name="Consum" Type="int" Nullable="false" />
+    <Property Name="Consum" Type="numeric" Precision="18" Scale="0" Nullable="false" />
     <Property Name="Pret/m cub" Type="money" Nullable="false" />
-    <Property Name="Total Plata" Type="money" Nullable="false" />
+    <Property Name="Suma de Plata" Type="money" Nullable="false" />
+    <Property Name="Data emitere" Type="date" Nullable="false" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'Asociatie Proprietari.dbo.ApaRece' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="ApaRece">
     <Key>
-      <PropertyRef Name="ID" />
-      <PropertyRef Name="IdApartament" />
-      <PropertyRef Name="IdResursa" />
-      <PropertyRef Name="Index Vechi" />
-      <PropertyRef Name="Index Nou" />
-      <PropertyRef Name="Consum" />
-      <PropertyRef Name="Pret/m cub" />
-      <PropertyRef Name="Total Plata" />
+      <PropertyRef Name="Index" />
     </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="IdApartament" Type="int" Nullable="false" />
-    <Property Name="IdResursa" Type="int" Nullable="false" />
     <Property Name="Index Vechi" Type="numeric" Precision="18" Scale="0" Nullable="false" />
     <Property Name="Index Nou" Type="numeric" Precision="18" Scale="0" Nullable="false" />
-    <Property Name="Consum" Type="int" Nullable="false" />
+    <Property Name="Consum" Type="numeric" Precision="18" Scale="0" Nullable="false" />
     <Property Name="Pret/m cub" Type="money" Nullable="false" />
-    <Property Name="Total Plata" Type="money" Nullable="false" />
+    <Property Name="Suma de plata" Type="money" Nullable="false" />
+    <Property Name="Data emitere" Type="date" Nullable="false" />
   </EntityType>
   <EntityType Name="Apartamente">
     <Key>
@@ -65,6 +56,25 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.ApaRece' does not have a
     <Property Name="Numar locatari" Type="int" Nullable="false" />
     <Property Name="Numar Camere" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="Canalizare">
+    <Key>
+      <PropertyRef Name="Index" />
+    </Key>
+    <Property Name="Index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdApartament" Type="int" Nullable="false" />
+    <Property Name="Suma de plata" Type="money" Nullable="false" />
+    <Property Name="Data emitere" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Carduri">
+    <Key>
+      <PropertyRef Name="Index" />
+    </Key>
+    <Property Name="Index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdMembru" Type="int" Nullable="false" />
+    <Property Name="Numar Card" Type="nchar" MaxLength="17" Nullable="false" />
+    <Property Name="CVC" Type="int" Nullable="false" />
+    <Property Name="Data Expirare" Type="date" Nullable="false" />
+  </EntityType>
   <EntityType Name="Coduri">
     <Key>
       <PropertyRef Name="Index" />
@@ -72,86 +82,168 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.ApaRece' does not have a
     <Property Name="Index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Cod" Type="nchar" MaxLength="10" Nullable="false" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'Asociatie Proprietari.dbo.Date Angajati' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Contracte Individuale">
+    <Key>
+      <PropertyRef Name="Index" />
+    </Key>
+    <Property Name="Index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdApartament" Type="int" Nullable="false" />
+    <Property Name="Serviciu" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Data" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Conturi de Utilizator">
+    <Key>
+      <PropertyRef Name="Index" />
+    </Key>
+    <Property Name="Index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Parola" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="IdMembru" Type="int" Nullable="false" />
+    <Property Name="Tip" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cota Parte">
+    <Key>
+      <PropertyRef Name="Index" />
+    </Key>
+    <Property Name="Index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdApartament" Type="int" Nullable="false" />
+    <Property Name="Cota Parte Agent termic" Type="float" Nullable="false" />
+    <Property Name="Cota Parte Canalizare" Type="float" Nullable="false" />
+    <Property Name="Cota Parte Alte Servicii" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Curatenie">
+    <Key>
+      <PropertyRef Name="Index" />
+    </Key>
+    <Property Name="Index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdApartament" Type="int" Nullable="false" />
+    <Property Name="Suma de plata" Type="money" Nullable="false" />
+    <Property Name="Data emitere" Type="date" Nullable="false" />
+  </EntityType>
   <EntityType Name="Date Angajati">
     <Key>
       <PropertyRef Name="index" />
-      <PropertyRef Name="IdAngajat" />
-      <PropertyRef Name="CNP" />
-      <PropertyRef Name="Data Angajare" />
-      <PropertyRef Name="Numar telefon" />
-      <PropertyRef Name="Localitate" />
-      <PropertyRef Name="Strada" />
     </Key>
     <Property Name="index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="IdAngajat" Type="int" Nullable="false" />
     <Property Name="CNP" Type="nchar" MaxLength="20" Nullable="false" />
     <Property Name="Data Angajare" Type="date" Nullable="false" />
-    <Property Name="Vechime" Type="int" />
+    <Property Name="Vechime" Type="int" Nullable="false" />
     <Property Name="Numar telefon" Type="nchar" MaxLength="10" Nullable="false" />
     <Property Name="Localitate" Type="nchar" MaxLength="20" Nullable="false" />
     <Property Name="Strada" Type="nchar" MaxLength="20" Nullable="false" />
-    <Property Name="Numar" Type="nchar" MaxLength="10" />
-    <Property Name="Bloc" Type="nchar" MaxLength="10" />
-    <Property Name="Scara" Type="nchar" MaxLength="10" />
-    <Property Name="Etaj" Type="nchar" MaxLength="10" />
-    <Property Name="Apartament" Type="nchar" MaxLength="10" />
+    <Property Name="Numar" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Bloc" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Scara" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Etaj" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Apartament" Type="nchar" MaxLength="10" Nullable="false" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'Asociatie Proprietari.dbo.EnergieElectrica' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="EnergieElecrica pe scara">
+    <Key>
+      <PropertyRef Name="Index" />
+    </Key>
+    <Property Name="Index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdApartament" Type="int" Nullable="false" />
+    <Property Name="Pret/Kw" Type="money" Nullable="false" />
+    <Property Name="Suma de plata" Type="money" Nullable="false" />
+    <Property Name="Data emitere" Type="date" Nullable="false" />
+  </EntityType>
   <EntityType Name="EnergieElectrica">
     <Key>
-      <PropertyRef Name="ID" />
-      <PropertyRef Name="IdApartament" />
-      <PropertyRef Name="IdResursa" />
-      <PropertyRef Name="Index Vechi" />
-      <PropertyRef Name="Index Nou" />
-      <PropertyRef Name="Consum" />
-      <PropertyRef Name="Pret/Kw" />
-      <PropertyRef Name="Total Plata" />
+      <PropertyRef Name="Index" />
     </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="IdApartament" Type="int" Nullable="false" />
-    <Property Name="IdResursa" Type="int" Nullable="false" />
     <Property Name="Index Vechi" Type="numeric" Precision="18" Scale="0" Nullable="false" />
     <Property Name="Index Nou" Type="numeric" Precision="18" Scale="0" Nullable="false" />
-    <Property Name="Consum" Type="int" Nullable="false" />
+    <Property Name="Consum" Type="numeric" Precision="18" Scale="0" Nullable="false" />
     <Property Name="Pret/Kw" Type="money" Nullable="false" />
-    <Property Name="Total Plata" Type="money" Nullable="false" />
+    <Property Name="Suma de plata" Type="money" Nullable="false" />
+    <Property Name="Data emitere" Type="date" Nullable="false" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'Asociatie Proprietari.dbo.Gaz' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-  <EntityType Name="Gaz">
+  <EntityType Name="Facturi Clienti">
     <Key>
       <PropertyRef Name="ID" />
-      <PropertyRef Name="IdApartament" />
-      <PropertyRef Name="IdResursa" />
-      <PropertyRef Name="Index Vechi" />
-      <PropertyRef Name="Index Nou" />
-      <PropertyRef Name="Consum" />
-      <PropertyRef Name="Pret/m cub" />
-      <PropertyRef Name="Total Plata" />
     </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Nume" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Prenume" Type="nchar" MaxLength="20" Nullable="false" />
     <Property Name="IdApartament" Type="int" Nullable="false" />
-    <Property Name="IdResursa" Type="int" Nullable="false" />
+    <Property Name="Total de Plata" Type="money" Nullable="false" />
+    <Property Name="Data emitere" Type="date" Nullable="false" />
+    <Property Name="Data Scadenta" Type="date" Nullable="false" />
+    <Property Name="Perioada Facturare" Type="int" Nullable="false" />
+    <Property Name="Achitat" Type="nchar" MaxLength="10" />
+    <Property Name="Data Achitare" Type="date" />
+  </EntityType>
+  <EntityType Name="Facturi Furnizori">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="CUIFurnizor" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Cantitate furnizata" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Total plata" Type="money" Nullable="false" />
+    <Property Name="Data emitere" Type="date" Nullable="false" />
+    <Property Name="Data scadenta" Type="date" Nullable="false" />
+    <Property Name="Perioada facturare" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Achitat" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Data Achitare" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Fond Reparatii">
+    <Key>
+      <PropertyRef Name="Index" />
+    </Key>
+    <Property Name="Index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdApartament" Type="int" Nullable="false" />
+    <Property Name="Suma de plata" Type="money" Nullable="false" />
+    <Property Name="Data emitere" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Fond Rulment">
+    <Key>
+      <PropertyRef Name="Index" />
+    </Key>
+    <Property Name="Index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdApartament" Type="int" Nullable="false" />
+    <Property Name="Suma de plata" Type="money" Nullable="false" />
+    <Property Name="Data emitere" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Furnizori">
+    <Key>
+      <PropertyRef Name="CUI" />
+    </Key>
+    <Property Name="CUI" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Nume" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="Serviciu" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="Data semnare contract" Type="date" Nullable="false" />
+    <Property Name="Data expirare contract" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Gaz">
+    <Key>
+      <PropertyRef Name="Index" />
+    </Key>
+    <Property Name="Index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdApartament" Type="int" Nullable="false" />
     <Property Name="Index Vechi" Type="numeric" Precision="18" Scale="0" Nullable="false" />
     <Property Name="Index Nou" Type="numeric" Precision="18" Scale="0" Nullable="false" />
-    <Property Name="Consum" Type="int" Nullable="false" />
+    <Property Name="Consum" Type="numeric" Precision="18" Scale="0" Nullable="false" />
     <Property Name="Pret/m cub" Type="money" Nullable="false" />
-    <Property Name="Total Plata" Type="money" Nullable="false" />
+    <Property Name="Suma de plata" Type="money" Nullable="false" />
+    <Property Name="Data Emitere" Type="date" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'Asociatie Proprietari.dbo.Locatari' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Lift">
+    <Key>
+      <PropertyRef Name="Index" />
+    </Key>
+    <Property Name="Index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdApartament" Type="int" Nullable="false" />
+    <Property Name="Suma de plata" Type="money" Nullable="false" />
+    <Property Name="Data emitere" Type="date" Nullable="false" />
+  </EntityType>
   <EntityType Name="Locatari">
     <Key>
       <PropertyRef Name="Index" />
-      <PropertyRef Name="IdApartament" />
-      <PropertyRef Name="Nume" />
-      <PropertyRef Name="Prenume" />
-      <PropertyRef Name="CNP" />
-      <PropertyRef Name="Data Mutare" />
     </Key>
     <Property Name="Index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="IdApartament" Type="int" Nullable="false" />
@@ -169,23 +261,37 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Locatari' does not have 
     <Property Name="Prenume" Type="nchar" MaxLength="20" Nullable="false" />
     <Property Name="Numar telefon" Type="nchar" MaxLength="10" Nullable="false" />
     <Property Name="Emai" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="Functie" Type="nchar" MaxLength="20" Nullable="false" />
     <Property Name="Data Inscriere" Type="date" Nullable="false" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'Asociatie Proprietari.dbo.Restante de Plata' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-  <EntityType Name="Restante de Plata">
+  <EntityType Name="Restante">
     <Key>
-      <PropertyRef Name="ID" />
-      <PropertyRef Name="IdApartament" />
-      <PropertyRef Name="Restante" />
-      <PropertyRef Name="Inceput perioada" />
-      <PropertyRef Name="Sfarsit perioada" />
+      <PropertyRef Name="Index" />
     </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="IdApartament" Type="int" Nullable="false" />
+    <Property Name="Index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDFactura" Type="numeric" Precision="18" Scale="0" Nullable="false" />
     <Property Name="Restante" Type="money" Nullable="false" />
-    <Property Name="Inceput perioada" Type="date" Nullable="false" />
-    <Property Name="Sfarsit perioada" Type="date" Nullable="false" />
+    <Property Name="Penalizari/zi" Type="int" Nullable="false" />
+    <Property Name="Zile de penalizare" Type="int" Nullable="false" />
+    <Property Name="Data curenta" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Salarii Angajati">
+    <Key>
+      <PropertyRef Name="Index" />
+    </Key>
+    <Property Name="Index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdApartament" Type="int" Nullable="false" />
+    <Property Name="Suma de plata" Type="money" Nullable="false" />
+    <Property Name="Data emitere" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Salubritate">
+    <Key>
+      <PropertyRef Name="Index" />
+    </Key>
+    <Property Name="Index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdApartament" Type="int" Nullable="false" />
+    <Property Name="Suma de plata" Type="money" Nullable="false" />
+    <Property Name="Data emitere" Type="date" Nullable="false" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -197,6 +303,57 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Restante de Plata' does 
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
+  <EntityType Name="Venituri">
+    <Key>
+      <PropertyRef Name="Index" />
+    </Key>
+    <Property Name="Index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fond Servicii" Type="money" />
+    <Property Name="Fond rulment" Type="money" />
+    <Property Name="Fond reparatii" Type="money" />
+  </EntityType>
+  <Association Name="A_AC">
+    <End Role="Apartamente" Type="Self.Apartamente" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ApaCalda" Type="Self.ApaCalda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Apartamente">
+        <PropertyRef Name="Numar" />
+      </Principal>
+      <Dependent Role="ApaCalda">
+        <PropertyRef Name="IdApartament" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="A_C">
+    <End Role="Apartamente" Type="Self.Apartamente" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Canalizare" Type="Self.Canalizare" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Apartamente">
+        <PropertyRef Name="Numar" />
+      </Principal>
+      <Dependent Role="Canalizare">
+        <PropertyRef Name="IdApartament" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="A_CNN">
+    <End Role="Apartamente" Type="Self.Apartamente" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Contracte Individuale" Type="Self.Contracte Individuale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Apartamente">
+        <PropertyRef Name="Numar" />
+      </Principal>
+      <Dependent Role="Contracte Individuale">
+        <PropertyRef Name="IdApartament" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="A_Da">
     <End Role="Angajati" Type="Self.Angajati" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -211,6 +368,281 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Restante de Plata' does 
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="A_EC">
+    <End Role="Apartamente" Type="Self.Apartamente" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EnergieElectrica" Type="Self.EnergieElectrica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Apartamente">
+        <PropertyRef Name="Numar" />
+      </Principal>
+      <Dependent Role="EnergieElectrica">
+        <PropertyRef Name="IdApartament" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="A_ECS">
+    <End Role="Apartamente" Type="Self.Apartamente" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EnergieElecrica pe scara" Type="Self.EnergieElecrica pe scara" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Apartamente">
+        <PropertyRef Name="Numar" />
+      </Principal>
+      <Dependent Role="EnergieElecrica pe scara">
+        <PropertyRef Name="IdApartament" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="A_G">
+    <End Role="Apartamente" Type="Self.Apartamente" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Gaz" Type="Self.Gaz" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Apartamente">
+        <PropertyRef Name="Numar" />
+      </Principal>
+      <Dependent Role="Gaz">
+        <PropertyRef Name="IdApartament" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="A_L">
+    <End Role="Apartamente" Type="Self.Apartamente" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Lift" Type="Self.Lift" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Apartamente">
+        <PropertyRef Name="Numar" />
+      </Principal>
+      <Dependent Role="Lift">
+        <PropertyRef Name="IdApartament" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="A_S">
+    <End Role="Apartamente" Type="Self.Apartamente" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Salubritate" Type="Self.Salubritate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Apartamente">
+        <PropertyRef Name="Numar" />
+      </Principal>
+      <Dependent Role="Salubritate">
+        <PropertyRef Name="IdApartament" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="A_SA">
+    <End Role="Apartamente" Type="Self.Apartamente" Multiplicity="1" />
+    <End Role="Salarii Angajati" Type="Self.Salarii Angajati" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Apartamente">
+        <PropertyRef Name="Numar" />
+      </Principal>
+      <Dependent Role="Salarii Angajati">
+        <PropertyRef Name="IdApartament" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AP_AR">
+    <End Role="Apartamente" Type="Self.Apartamente" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ApaRece" Type="Self.ApaRece" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Apartamente">
+        <PropertyRef Name="Numar" />
+      </Principal>
+      <Dependent Role="ApaRece">
+        <PropertyRef Name="IdApartament" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AP_AT">
+    <End Role="Apartamente" Type="Self.Apartamente" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Agent Termic" Type="Self.Agent Termic" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Apartamente">
+        <PropertyRef Name="Numar" />
+      </Principal>
+      <Dependent Role="Agent Termic">
+        <PropertyRef Name="IdApartament" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AP_C">
+    <End Role="Apartamente" Type="Self.Apartamente" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Curatenie" Type="Self.Curatenie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Apartamente">
+        <PropertyRef Name="Numar" />
+      </Principal>
+      <Dependent Role="Curatenie">
+        <PropertyRef Name="IdApartament" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AP_COTA">
+    <End Role="Apartamente" Type="Self.Apartamente" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Cota Parte" Type="Self.Cota Parte" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Apartamente">
+        <PropertyRef Name="Numar" />
+      </Principal>
+      <Dependent Role="Cota Parte">
+        <PropertyRef Name="IdApartament" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AP_facturi clienti">
+    <End Role="Apartamente" Type="Self.Apartamente" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Facturi Clienti" Type="Self.Facturi Clienti" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Apartamente">
+        <PropertyRef Name="Numar" />
+      </Principal>
+      <Dependent Role="Facturi Clienti">
+        <PropertyRef Name="IdApartament" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AP_Fond Rulment">
+    <End Role="Apartamente" Type="Self.Apartamente" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fond Rulment" Type="Self.Fond Rulment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Apartamente">
+        <PropertyRef Name="Numar" />
+      </Principal>
+      <Dependent Role="Fond Rulment">
+        <PropertyRef Name="IdApartament" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AP_LOC">
+    <End Role="Apartamente" Type="Self.Apartamente" Multiplicity="1" />
+    <End Role="Locatari" Type="Self.Locatari" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Apartamente">
+        <PropertyRef Name="Numar" />
+      </Principal>
+      <Dependent Role="Locatari">
+        <PropertyRef Name="IdApartament" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AP_REP">
+    <End Role="Apartamente" Type="Self.Apartamente" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fond Reparatii" Type="Self.Fond Reparatii" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Apartamente">
+        <PropertyRef Name="Numar" />
+      </Principal>
+      <Dependent Role="Fond Reparatii">
+        <PropertyRef Name="IdApartament" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="F_Facturi">
+    <End Role="Furnizori" Type="Self.Furnizori" Multiplicity="1" />
+    <End Role="Facturi Furnizori" Type="Self.Facturi Furnizori" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Furnizori">
+        <PropertyRef Name="CUI" />
+      </Principal>
+      <Dependent Role="Facturi Furnizori">
+        <PropertyRef Name="CUIFurnizor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fur_restante">
+    <End Role="Facturi Clienti" Type="Self.Facturi Clienti" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Restante" Type="Self.Restante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Facturi Clienti">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Restante">
+        <PropertyRef Name="IDFactura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="M_CARD">
+    <End Role="Membri Asociatie" Type="Self.Membri Asociatie" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Carduri" Type="Self.Carduri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Membri Asociatie">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Carduri">
+        <PropertyRef Name="IdMembru" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="M_CONTURI">
+    <End Role="Membri Asociatie" Type="Self.Membri Asociatie" Multiplicity="1" />
+    <End Role="Conturi de Utilizator" Type="Self.Conturi de Utilizator" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Membri Asociatie">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Conturi de Utilizator">
+        <PropertyRef Name="IdMembru" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PRO_AP">
+    <End Role="Membri Asociatie" Type="Self.Membri Asociatie" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Apartamente" Type="Self.Apartamente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Membri Asociatie">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Apartamente">
+        <PropertyRef Name="IdProprietar" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="detaliiFactuaCotaParte" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="luna_facturare" Type="nchar" Mode="In" />
+    <Parameter Name="id_apartament" Type="int" Mode="In" />
+    <Parameter Name="an_facturare" Type="nchar" Mode="In" />
+  </Function>
+  <Function Name="detaliiFactura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="perioada_facturare" Type="nchar" Mode="In" />
+    <Parameter Name="id_apartament" Type="int" Mode="In" />
+  </Function>
+  <Function Name="detaliiFacturaCurenta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="luna_facturare" Type="nchar" Mode="In" />
+    <Parameter Name="id_apartament" Type="int" Mode="In" />
+    <Parameter Name="an_facturare" Type="nchar" Mode="In" />
+  </Function>
+  <Function Name="detaliiRestanta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="numar_apartament" Type="int" Mode="In" />
+  </Function>
   <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
   <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
@@ -243,98 +675,126 @@ warning 6002: The table/view 'Asociatie Proprietari.dbo.Restante de Plata' does 
   </Function>
   <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="Agent Termic" EntityType="Self.Agent Termic" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Angajati" EntityType="Self.Angajati" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ApaCalda" EntityType="Self.ApaCalda" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ApaRece" EntityType="Self.ApaRece" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Apartamente" EntityType="Self.Apartamente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Canalizare" EntityType="Self.Canalizare" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Carduri" EntityType="Self.Carduri" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Coduri" EntityType="Self.Coduri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contracte Individuale" EntityType="Self.Contracte Individuale" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Conturi de Utilizator" EntityType="Self.Conturi de Utilizator" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cota Parte" EntityType="Self.Cota Parte" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Curatenie" EntityType="Self.Curatenie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Date Angajati" EntityType="Self.Date Angajati" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EnergieElecrica pe scara" EntityType="Self.EnergieElecrica pe scara" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EnergieElectrica" EntityType="Self.EnergieElectrica" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Facturi Clienti" EntityType="Self.Facturi Clienti" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Facturi Furnizori" EntityType="Self.Facturi Furnizori" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Fond Reparatii" EntityType="Self.Fond Reparatii" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Fond Rulment" EntityType="Self.Fond Rulment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Furnizori" EntityType="Self.Furnizori" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Gaz" EntityType="Self.Gaz" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lift" EntityType="Self.Lift" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Locatari" EntityType="Self.Locatari" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Membri Asociatie" EntityType="Self.Membri Asociatie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Restante" EntityType="Self.Restante" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Salarii Angajati" EntityType="Self.Salarii Angajati" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Salubritate" EntityType="Self.Salubritate" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ApaCalda" EntityType="Self.ApaCalda" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [ApaCalda].[ID] AS [ID], 
-    [ApaCalda].[IdApartament] AS [IdApartament], 
-    [ApaCalda].[IdResursa] AS [IdResursa], 
-    [ApaCalda].[Index Vechi] AS [Index Vechi], 
-    [ApaCalda].[Index Nou] AS [Index Nou], 
-    [ApaCalda].[Consum] AS [Consum], 
-    [ApaCalda].[Pret/m cub] AS [Pret/m cub], 
-    [ApaCalda].[Total Plata] AS [Total Plata]
-    FROM [dbo].[ApaCalda] AS [ApaCalda]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="ApaRece" EntityType="Self.ApaRece" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [ApaRece].[ID] AS [ID], 
-    [ApaRece].[IdApartament] AS [IdApartament], 
-    [ApaRece].[IdResursa] AS [IdResursa], 
-    [ApaRece].[Index Vechi] AS [Index Vechi], 
-    [ApaRece].[Index Nou] AS [Index Nou], 
-    [ApaRece].[Consum] AS [Consum], 
-    [ApaRece].[Pret/m cub] AS [Pret/m cub], 
-    [ApaRece].[Total Plata] AS [Total Plata]
-    FROM [dbo].[ApaRece] AS [ApaRece]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="Date Angajati" EntityType="Self.Date Angajati" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [Date Angajati].[index] AS [index], 
-    [Date Angajati].[IdAngajat] AS [IdAngajat], 
-    [Date Angajati].[CNP] AS [CNP], 
-    [Date Angajati].[Data Angajare] AS [Data Angajare], 
-    [Date Angajati].[Vechime] AS [Vechime], 
-    [Date Angajati].[Numar telefon] AS [Numar telefon], 
-    [Date Angajati].[Localitate] AS [Localitate], 
-    [Date Angajati].[Strada] AS [Strada], 
-    [Date Angajati].[Numar] AS [Numar], 
-    [Date Angajati].[Bloc] AS [Bloc], 
-    [Date Angajati].[Scara] AS [Scara], 
-    [Date Angajati].[Etaj] AS [Etaj], 
-    [Date Angajati].[Apartament] AS [Apartament]
-    FROM [dbo].[Date Angajati] AS [Date Angajati]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="EnergieElectrica" EntityType="Self.EnergieElectrica" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [EnergieElectrica].[ID] AS [ID], 
-    [EnergieElectrica].[IdApartament] AS [IdApartament], 
-    [EnergieElectrica].[IdResursa] AS [IdResursa], 
-    [EnergieElectrica].[Index Vechi] AS [Index Vechi], 
-    [EnergieElectrica].[Index Nou] AS [Index Nou], 
-    [EnergieElectrica].[Consum] AS [Consum], 
-    [EnergieElectrica].[Pret/Kw] AS [Pret/Kw], 
-    [EnergieElectrica].[Total Plata] AS [Total Plata]
-    FROM [dbo].[EnergieElectrica] AS [EnergieElectrica]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="Gaz" EntityType="Self.Gaz" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [Gaz].[ID] AS [ID], 
-    [Gaz].[IdApartament] AS [IdApartament], 
-    [Gaz].[IdResursa] AS [IdResursa], 
-    [Gaz].[Index Vechi] AS [Index Vechi], 
-    [Gaz].[Index Nou] AS [Index Nou], 
-    [Gaz].[Consum] AS [Consum], 
-    [Gaz].[Pret/m cub] AS [Pret/m cub], 
-    [Gaz].[Total Plata] AS [Total Plata]
-    FROM [dbo].[Gaz] AS [Gaz]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="Locatari" EntityType="Self.Locatari" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [Locatari].[Index] AS [Index], 
-    [Locatari].[IdApartament] AS [IdApartament], 
-    [Locatari].[Nume] AS [Nume], 
-    [Locatari].[Prenume] AS [Prenume], 
-    [Locatari].[CNP] AS [CNP], 
-    [Locatari].[Data Mutare] AS [Data Mutare]
-    FROM [dbo].[Locatari] AS [Locatari]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="Restante de Plata" EntityType="Self.Restante de Plata" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [Restante de Plata].[ID] AS [ID], 
-    [Restante de Plata].[IdApartament] AS [IdApartament], 
-    [Restante de Plata].[Restante] AS [Restante], 
-    [Restante de Plata].[Inceput perioada] AS [Inceput perioada], 
-    [Restante de Plata].[Sfarsit perioada] AS [Sfarsit perioada]
-    FROM [dbo].[Restante de Plata] AS [Restante de Plata]</DefiningQuery>
-    </EntitySet>
+    <EntitySet Name="Venituri" EntityType="Self.Venituri" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="A_AC" Association="Self.A_AC">
+      <End Role="Apartamente" EntitySet="Apartamente" />
+      <End Role="ApaCalda" EntitySet="ApaCalda" />
+    </AssociationSet>
+    <AssociationSet Name="A_C" Association="Self.A_C">
+      <End Role="Apartamente" EntitySet="Apartamente" />
+      <End Role="Canalizare" EntitySet="Canalizare" />
+    </AssociationSet>
+    <AssociationSet Name="A_CNN" Association="Self.A_CNN">
+      <End Role="Apartamente" EntitySet="Apartamente" />
+      <End Role="Contracte Individuale" EntitySet="Contracte Individuale" />
+    </AssociationSet>
     <AssociationSet Name="A_Da" Association="Self.A_Da">
       <End Role="Angajati" EntitySet="Angajati" />
       <End Role="Date Angajati" EntitySet="Date Angajati" />
+    </AssociationSet>
+    <AssociationSet Name="A_EC" Association="Self.A_EC">
+      <End Role="Apartamente" EntitySet="Apartamente" />
+      <End Role="EnergieElectrica" EntitySet="EnergieElectrica" />
+    </AssociationSet>
+    <AssociationSet Name="A_ECS" Association="Self.A_ECS">
+      <End Role="Apartamente" EntitySet="Apartamente" />
+      <End Role="EnergieElecrica pe scara" EntitySet="EnergieElecrica pe scara" />
+    </AssociationSet>
+    <AssociationSet Name="A_G" Association="Self.A_G">
+      <End Role="Apartamente" EntitySet="Apartamente" />
+      <End Role="Gaz" EntitySet="Gaz" />
+    </AssociationSet>
+    <AssociationSet Name="A_L" Association="Self.A_L">
+      <End Role="Apartamente" EntitySet="Apartamente" />
+      <End Role="Lift" EntitySet="Lift" />
+    </AssociationSet>
+    <AssociationSet Name="A_S" Association="Self.A_S">
+      <End Role="Apartamente" EntitySet="Apartamente" />
+      <End Role="Salubritate" EntitySet="Salubritate" />
+    </AssociationSet>
+    <AssociationSet Name="A_SA" Association="Self.A_SA">
+      <End Role="Apartamente" EntitySet="Apartamente" />
+      <End Role="Salarii Angajati" EntitySet="Salarii Angajati" />
+    </AssociationSet>
+    <AssociationSet Name="AP_AR" Association="Self.AP_AR">
+      <End Role="Apartamente" EntitySet="Apartamente" />
+      <End Role="ApaRece" EntitySet="ApaRece" />
+    </AssociationSet>
+    <AssociationSet Name="AP_AT" Association="Self.AP_AT">
+      <End Role="Apartamente" EntitySet="Apartamente" />
+      <End Role="Agent Termic" EntitySet="Agent Termic" />
+    </AssociationSet>
+    <AssociationSet Name="AP_C" Association="Self.AP_C">
+      <End Role="Apartamente" EntitySet="Apartamente" />
+      <End Role="Curatenie" EntitySet="Curatenie" />
+    </AssociationSet>
+    <AssociationSet Name="AP_COTA" Association="Self.AP_COTA">
+      <End Role="Apartamente" EntitySet="Apartamente" />
+      <End Role="Cota Parte" EntitySet="Cota Parte" />
+    </AssociationSet>
+    <AssociationSet Name="AP_facturi clienti" Association="Self.AP_facturi clienti">
+      <End Role="Apartamente" EntitySet="Apartamente" />
+      <End Role="Facturi Clienti" EntitySet="Facturi Clienti" />
+    </AssociationSet>
+    <AssociationSet Name="AP_Fond Rulment" Association="Self.AP_Fond Rulment">
+      <End Role="Apartamente" EntitySet="Apartamente" />
+      <End Role="Fond Rulment" EntitySet="Fond Rulment" />
+    </AssociationSet>
+    <AssociationSet Name="AP_LOC" Association="Self.AP_LOC">
+      <End Role="Apartamente" EntitySet="Apartamente" />
+      <End Role="Locatari" EntitySet="Locatari" />
+    </AssociationSet>
+    <AssociationSet Name="AP_REP" Association="Self.AP_REP">
+      <End Role="Apartamente" EntitySet="Apartamente" />
+      <End Role="Fond Reparatii" EntitySet="Fond Reparatii" />
+    </AssociationSet>
+    <AssociationSet Name="F_Facturi" Association="Self.F_Facturi">
+      <End Role="Furnizori" EntitySet="Furnizori" />
+      <End Role="Facturi Furnizori" EntitySet="Facturi Furnizori" />
+    </AssociationSet>
+    <AssociationSet Name="Fur_restante" Association="Self.Fur_restante">
+      <End Role="Facturi Clienti" EntitySet="Facturi Clienti" />
+      <End Role="Restante" EntitySet="Restante" />
+    </AssociationSet>
+    <AssociationSet Name="M_CARD" Association="Self.M_CARD">
+      <End Role="Membri Asociatie" EntitySet="Membri Asociatie" />
+      <End Role="Carduri" EntitySet="Carduri" />
+    </AssociationSet>
+    <AssociationSet Name="M_CONTURI" Association="Self.M_CONTURI">
+      <End Role="Membri Asociatie" EntitySet="Membri Asociatie" />
+      <End Role="Conturi de Utilizator" EntitySet="Conturi de Utilizator" />
+    </AssociationSet>
+    <AssociationSet Name="PRO_AP" Association="Self.PRO_AP">
+      <End Role="Membri Asociatie" EntitySet="Membri Asociatie" />
+      <End Role="Apartamente" EntitySet="Apartamente" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

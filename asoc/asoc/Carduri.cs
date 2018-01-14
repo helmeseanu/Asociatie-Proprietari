@@ -12,15 +12,14 @@ namespace asoc
     using System;
     using System.Collections.Generic;
     
-    public partial class Restante
+    public partial class Carduri
     {
         public int Index { get; set; }
-        public decimal IDFactura { get; set; }
-        public decimal Restante1 { get; set; }
-        public int Penalizari_zi { get; set; }
-        public int Zile_de_penalizare { get; set; }
-        public string Data_curenta { get; set; }
+        public int IdMembru { get; set; }
+        public string Numar_Card { get; set; }
+        public int CVC { get; set; }
+        public System.DateTime Data_Expirare { get; set; }
     
-        public virtual Facturi_Clienti Facturi_Clienti { get; set; }
+        public virtual Membri_Asociatie Membri_Asociatie { get; set; }
     }
 }

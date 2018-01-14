@@ -10,14 +10,11 @@
 namespace asoc
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Avansuri_de_Plata
+    public partial class detaliiFactura1_Result
     {
-        public int Index { get; set; }
-        public int IdMembru { get; set; }
-        public decimal Avansuri { get; set; }
-    
-        public virtual Membri_Asociatie Membri_Asociatie { get; set; }
+        public string Serviciu { get; set; }
+        public decimal Consum { get; set; }
+        public decimal Suma_de_Plata { get; set; }
     }
 }

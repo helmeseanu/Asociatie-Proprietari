@@ -18,7 +18,7 @@ namespace asoc
         public int IdAngajat { get; set; }
         public string CNP { get; set; }
         public System.DateTime Data_Angajare { get; set; }
-        public Nullable<int> Vechime { get; set; }
+        public int Vechime { get; set; }
         public string Numar_telefon { get; set; }
         public string Localitate { get; set; }
         public string Strada { get; set; }
