@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Asociatie_ProprietariEntities3">
+    <EntitySetMapping Name="Agent_Termics">
+      <EntityTypeMapping TypeName="Model.Agent_Termic">
+        <MappingFragment StoreEntitySet="Agent Termic">
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="IdApartament" ColumnName="IdApartament" />
+          <ScalarProperty Name="Suma_de_plata" ColumnName="Suma de plata" />
+          <ScalarProperty Name="Data_emitere" ColumnName="Data emitere" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Angajatis">
+      <EntityTypeMapping TypeName="Model.Angajati">
+        <MappingFragment StoreEntitySet="Angajati">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="Prenume" ColumnName="Prenume" />
+          <ScalarProperty Name="Functie" ColumnName="Functie" />
+          <ScalarProperty Name="Salariu_luna" ColumnName="Salariu/luna" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ApaCaldas">
+      <EntityTypeMapping TypeName="Model.ApaCalda">
+        <MappingFragment StoreEntitySet="ApaCalda">
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="IdApartament" ColumnName="IdApartament" />
+          <ScalarProperty Name="Index_Vechi" ColumnName="Index Vechi" />
+          <ScalarProperty Name="Index_Nou" ColumnName="Index Nou" />
+          <ScalarProperty Name="Consum" ColumnName="Consum" />
+          <ScalarProperty Name="Pret_m_cub" ColumnName="Pret/m cub" />
+          <ScalarProperty Name="Suma_de_Plata" ColumnName="Suma de Plata" />
+          <ScalarProperty Name="Data_emitere" ColumnName="Data emitere" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ApaReces">
+      <EntityTypeMapping TypeName="Model.ApaRece">
+        <MappingFragment StoreEntitySet="ApaRece">
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="IdApartament" ColumnName="IdApartament" />
+          <ScalarProperty Name="Index_Vechi" ColumnName="Index Vechi" />
+          <ScalarProperty Name="Index_Nou" ColumnName="Index Nou" />
+          <ScalarProperty Name="Consum" ColumnName="Consum" />
+          <ScalarProperty Name="Pret_m_cub" ColumnName="Pret/m cub" />
+          <ScalarProperty Name="Suma_de_plata" ColumnName="Suma de plata" />
+          <ScalarProperty Name="Data_emitere" ColumnName="Data emitere" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Apartamentes">
+      <EntityTypeMapping TypeName="Model.Apartamente">
+        <MappingFragment StoreEntitySet="Apartamente">
+          <ScalarProperty Name="Numar" ColumnName="Numar" />
+          <ScalarProperty Name="IdProprietar" ColumnName="IdProprietar" />
+          <ScalarProperty Name="Suprafata_mP_" ColumnName="Suprafata(mP)" />
+          <ScalarProperty Name="Suprafata_utila_mP_" ColumnName="Suprafata utila(mP)" />
+          <ScalarProperty Name="Numar_locatari" ColumnName="Numar locatari" />
+          <ScalarProperty Name="Numar_Camere" ColumnName="Numar Camere" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Canalizares">
+      <EntityTypeMapping TypeName="Model.Canalizare">
+        <MappingFragment StoreEntitySet="Canalizare">
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="IdApartament" ColumnName="IdApartament" />
+          <ScalarProperty Name="Suma_de_plata" ColumnName="Suma de plata" />
+          <ScalarProperty Name="Data_emitere" ColumnName="Data emitere" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contracte_Individuales">
+      <EntityTypeMapping TypeName="Model.Contracte_Individuale">
+        <MappingFragment StoreEntitySet="Contracte Individuale">
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="IdApartament" ColumnName="IdApartament" />
+          <ScalarProperty Name="Serviciu" ColumnName="Serviciu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Conturi_de_Utilizators">
+      <EntityTypeMapping TypeName="Model.Conturi_de_Utilizator">
+        <MappingFragment StoreEntitySet="Conturi de Utilizator">
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Parola" ColumnName="Parola" />
+          <ScalarProperty Name="IdMembru" ColumnName="IdMembru" />
+          <ScalarProperty Name="Tip" ColumnName="Tip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cota_Partes">
+      <EntityTypeMapping TypeName="Model.Cota_Parte">
+        <MappingFragment StoreEntitySet="Cota Parte">
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="IdApartament" ColumnName="IdApartament" />
+          <ScalarProperty Name="Cota_Parte_Agent_termic" ColumnName="Cota Parte Agent termic" />
+          <ScalarProperty Name="Cota_Parte_Canalizare" ColumnName="Cota Parte Canalizare" />
+          <ScalarProperty Name="Cota_Parte_Alte_Servicii" ColumnName="Cota Parte Alte Servicii" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Curatenies">
+      <EntityTypeMapping TypeName="Model.Curatenie">
+        <MappingFragment StoreEntitySet="Curatenie">
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="IdApartament" ColumnName="IdApartament" />
+          <ScalarProperty Name="Suma_de_plata" ColumnName="Suma de plata" />
+          <ScalarProperty Name="Data_emitere" ColumnName="Data emitere" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Date_Angajatis">
+      <EntityTypeMapping TypeName="Model.Date_Angajati">
+        <MappingFragment StoreEntitySet="Date Angajati">
+          <ScalarProperty Name="index" ColumnName="index" />
+          <ScalarProperty Name="IdAngajat" ColumnName="IdAngajat" />
+          <ScalarProperty Name="CNP" ColumnName="CNP" />
+          <ScalarProperty Name="Data_Angajare" ColumnName="Data Angajare" />
+          <ScalarProperty Name="Vechime" ColumnName="Vechime" />
+          <ScalarProperty Name="Numar_telefon" ColumnName="Numar telefon" />
+          <ScalarProperty Name="Localitate" ColumnName="Localitate" />
+          <ScalarProperty Name="Strada" ColumnName="Strada" />
+          <ScalarProperty Name="Numar" ColumnName="Numar" />
+          <ScalarProperty Name="Bloc" ColumnName="Bloc" />
+          <ScalarProperty Name="Scara" ColumnName="Scara" />
+          <ScalarProperty Name="Etaj" ColumnName="Etaj" />
+          <ScalarProperty Name="Apartament" ColumnName="Apartament" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EnergieElecrica_pe_scaras">
+      <EntityTypeMapping TypeName="Model.EnergieElecrica_pe_scara">
+        <MappingFragment StoreEntitySet="EnergieElecrica pe scara">
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="IdApartament" ColumnName="IdApartament" />
+          <ScalarProperty Name="Pret_Kw" ColumnName="Pret/Kw" />
+          <ScalarProperty Name="Suma_de_plata" ColumnName="Suma de plata" />
+          <ScalarProperty Name="Data_emitere" ColumnName="Data emitere" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EnergieElectricas">
+      <EntityTypeMapping TypeName="Model.EnergieElectrica">
+        <MappingFragment StoreEntitySet="EnergieElectrica">
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="IdApartament" ColumnName="IdApartament" />
+          <ScalarProperty Name="Index_Vechi" ColumnName="Index Vechi" />
+          <ScalarProperty Name="Index_Nou" ColumnName="Index Nou" />
+          <ScalarProperty Name="Consum" ColumnName="Consum" />
+          <ScalarProperty Name="Pret_Kw" ColumnName="Pret/Kw" />
+          <ScalarProperty Name="Suma_de_plata" ColumnName="Suma de plata" />
+          <ScalarProperty Name="Data_emitere" ColumnName="Data emitere" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Facturi_Clientis">
+      <EntityTypeMapping TypeName="Model.Facturi_Clienti">
+        <MappingFragment StoreEntitySet="Facturi Clienti">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="Prenume" ColumnName="Prenume" />
+          <ScalarProperty Name="IdApartament" ColumnName="IdApartament" />
+          <ScalarProperty Name="Total_de_Plata" ColumnName="Total de Plata" />
+          <ScalarProperty Name="Data_emitere" ColumnName="Data emitere" />
+          <ScalarProperty Name="Data_Scadenta" ColumnName="Data Scadenta" />
+          <ScalarProperty Name="Perioada_Facturare" ColumnName="Perioada Facturare" />
+          <ScalarProperty Name="Achitat" ColumnName="Achitat" />
+          <ScalarProperty Name="Data_Achitare" ColumnName="Data Achitare" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Facturi_Furnizoris">
+      <EntityTypeMapping TypeName="Model.Facturi_Furnizori">
+        <MappingFragment StoreEntitySet="Facturi Furnizori">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CUIFurnizor" ColumnName="CUIFurnizor" />
+          <ScalarProperty Name="Cantitate_furnizata" ColumnName="Cantitate furnizata" />
+          <ScalarProperty Name="Total_plata" ColumnName="Total plata" />
+          <ScalarProperty Name="Data_emitere" ColumnName="Data emitere" />
+          <ScalarProperty Name="Data_scadenta" ColumnName="Data scadenta" />
+          <ScalarProperty Name="Perioada_facturare" ColumnName="Perioada facturare" />
+          <ScalarProperty Name="Achitat" ColumnName="Achitat" />
+          <ScalarProperty Name="Data_Achitare" ColumnName="Data Achitare" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fond_Reparatiis">
+      <EntityTypeMapping TypeName="Model.Fond_Reparatii">
+        <MappingFragment StoreEntitySet="Fond Reparatii">
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="IdApartament" ColumnName="IdApartament" />
+          <ScalarProperty Name="Suma_de_plata" ColumnName="Suma de plata" />
+          <ScalarProperty Name="Data_emitere" ColumnName="Data emitere" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fond_Rulments">
+      <EntityTypeMapping TypeName="Model.Fond_Rulment">
+        <MappingFragment StoreEntitySet="Fond Rulment">
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="IdApartament" ColumnName="IdApartament" />
+          <ScalarProperty Name="Suma_de_plata" ColumnName="Suma de plata" />
+          <ScalarProperty Name="Data_emitere" ColumnName="Data emitere" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Furnizoris">
+      <EntityTypeMapping TypeName="Model.Furnizori">
+        <MappingFragment StoreEntitySet="Furnizori">
+          <ScalarProperty Name="CUI" ColumnName="CUI" />
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Serviciu" ColumnName="Serviciu" />
+          <ScalarProperty Name="Data_semnare_contract" ColumnName="Data semnare contract" />
+          <ScalarProperty Name="Data_expirare_contract" ColumnName="Data expirare contract" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gazs">
+      <EntityTypeMapping TypeName="Model.Gaz">
+        <MappingFragment StoreEntitySet="Gaz">
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="IdApartament" ColumnName="IdApartament" />
+          <ScalarProperty Name="Index_Vechi" ColumnName="Index Vechi" />
+          <ScalarProperty Name="Index_Nou" ColumnName="Index Nou" />
+          <ScalarProperty Name="Consum" ColumnName="Consum" />
+          <ScalarProperty Name="Pret_m_cub" ColumnName="Pret/m cub" />
+          <ScalarProperty Name="Suma_de_plata" ColumnName="Suma de plata" />
+          <ScalarProperty Name="Data_Emitere" ColumnName="Data Emitere" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lifts">
+      <EntityTypeMapping TypeName="Model.Lift">
+        <MappingFragment StoreEntitySet="Lift">
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="IdApartament" ColumnName="IdApartament" />
+          <ScalarProperty Name="Suma_de_plata" ColumnName="Suma de plata" />
+          <ScalarProperty Name="Data_emitere" ColumnName="Data emitere" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locataris">
+      <EntityTypeMapping TypeName="Model.Locatari">
+        <MappingFragment StoreEntitySet="Locatari">
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="IdApartament" ColumnName="IdApartament" />
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="Prenume" ColumnName="Prenume" />
+          <ScalarProperty Name="CNP" ColumnName="CNP" />
+          <ScalarProperty Name="Data_Mutare" ColumnName="Data Mutare" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Membri_Asociaties">
+      <EntityTypeMapping TypeName="Model.Membri_Asociatie">
+        <MappingFragment StoreEntitySet="Membri Asociatie">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="Prenume" ColumnName="Prenume" />
+          <ScalarProperty Name="Numar_telefon" ColumnName="Numar telefon" />
+          <ScalarProperty Name="Emai" ColumnName="Emai" />
+          <ScalarProperty Name="Functie" ColumnName="Functie" />
+          <ScalarProperty Name="Data_Inscriere" ColumnName="Data Inscriere" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Restantes">
+      <EntityTypeMapping TypeName="Model.Restante">
+        <MappingFragment StoreEntitySet="Restante">
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="CUIFactura" ColumnName="CUIFactura" />
+          <ScalarProperty Name="Restante1" ColumnName="Restante" />
+          <ScalarProperty Name="Penalizari_zi" ColumnName="Penalizari/zi" />
+          <ScalarProperty Name="Zile_de_penalizare" ColumnName="Zile de penalizare" />
+          <ScalarProperty Name="Data_curenta" ColumnName="Data curenta" />
+          <ScalarProperty Name="Data_scadenta" ColumnName="Data scadenta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Salarii_Angajatis">
+      <EntityTypeMapping TypeName="Model.Salarii_Angajati">
+        <MappingFragment StoreEntitySet="Salarii Angajati">
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="IdApartament" ColumnName="IdApartament" />
+          <ScalarProperty Name="Suma_de_plata" ColumnName="Suma de plata" />
+          <ScalarProperty Name="Data_emitere" ColumnName="Data emitere" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Salubritates">
+      <EntityTypeMapping TypeName="Model.Salubritate">
+        <MappingFragment StoreEntitySet="Salubritate">
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="IdApartament" ColumnName="IdApartament" />
+          <ScalarProperty Name="Suma_de_plata" ColumnName="Suma de plata" />
+          <ScalarProperty Name="Data_emitere" ColumnName="Data emitere" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="Model.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Venituris">
+      <EntityTypeMapping TypeName="Model.Venituri">
+        <MappingFragment StoreEntitySet="Venituri">
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="Fond_Servicii" ColumnName="Fond Servicii" />
+          <ScalarProperty Name="Fond_rulment" ColumnName="Fond rulment" />
+          <ScalarProperty Name="Fond_reparatii" ColumnName="Fond reparatii" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Carduris">
+      <EntityTypeMapping TypeName="Model.Carduri">
+        <MappingFragment StoreEntitySet="Carduri">
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="IdMembru" ColumnName="IdMembru" />
+          <ScalarProperty Name="Numar_Card" ColumnName="Numar Card" />
+          <ScalarProperty Name="CVC" ColumnName="CVC" />
+          <ScalarProperty Name="Data_Expirare" ColumnName="Data Expirare" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Coduris">
+      <EntityTypeMapping TypeName="Model.Coduri">
+        <MappingFragment StoreEntitySet="Coduri">
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="Cod" ColumnName="Cod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Model.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Model.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Model.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Model.Store.sp_helpdiagramdefinition" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Model.Store.sp_helpdiagrams" />
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Model.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Model.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>

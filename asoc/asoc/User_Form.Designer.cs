@@ -37,12 +37,12 @@
             this.panel_Logo = new System.Windows.Forms.Panel();
             this.label_Logo_1 = new System.Windows.Forms.Label();
             this.panel_Time = new System.Windows.Forms.Panel();
+            this.textBox_Time = new System.Windows.Forms.TextBox();
             this.label_Clock = new System.Windows.Forms.Label();
             this.button_Calendar = new System.Windows.Forms.Button();
-            this.textBox_Time = new System.Windows.Forms.TextBox();
             this.panel_Lista_Apartamente = new System.Windows.Forms.Panel();
-            this.listView_Apartamente = new System.Windows.Forms.ListView();
             this.label_ListaApartamente = new System.Windows.Forms.Label();
+            this.listView_Apartamente = new System.Windows.Forms.ListView();
             this.panel_Buttons.SuspendLayout();
             this.panel_Logo.SuspendLayout();
             this.panel_Time.SuspendLayout();
@@ -128,6 +128,7 @@
             this.button_Factura_Curenta.Text = "Factura Curenta";
             this.button_Factura_Curenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button_Factura_Curenta.UseVisualStyleBackColor = false;
+            this.button_Factura_Curenta.Click += new System.EventHandler(this.button_Factura_Curenta_Click);
             // 
             // panel_Logo
             // 
@@ -163,6 +164,15 @@
             this.panel_Time.Size = new System.Drawing.Size(806, 71);
             this.panel_Time.TabIndex = 1;
             // 
+            // textBox_Time
+            // 
+            this.textBox_Time.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
+            this.textBox_Time.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_Time.Location = new System.Drawing.Point(724, 25);
+            this.textBox_Time.Name = "textBox_Time";
+            this.textBox_Time.Size = new System.Drawing.Size(56, 15);
+            this.textBox_Time.TabIndex = 6;
+            // 
             // label_Clock
             // 
             this.label_Clock.AutoSize = true;
@@ -185,15 +195,6 @@
             this.button_Calendar.TabIndex = 4;
             this.button_Calendar.UseVisualStyleBackColor = true;
             // 
-            // textBox_Time
-            // 
-            this.textBox_Time.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
-            this.textBox_Time.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_Time.Location = new System.Drawing.Point(724, 25);
-            this.textBox_Time.Name = "textBox_Time";
-            this.textBox_Time.Size = new System.Drawing.Size(56, 15);
-            this.textBox_Time.TabIndex = 6;
-            // 
             // panel_Lista_Apartamente
             // 
             this.panel_Lista_Apartamente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(35)))), ((int)(((byte)(41)))));
@@ -205,15 +206,6 @@
             this.panel_Lista_Apartamente.Size = new System.Drawing.Size(260, 494);
             this.panel_Lista_Apartamente.TabIndex = 2;
             // 
-            // listView_Apartamente
-            // 
-            this.listView_Apartamente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(169)))), ((int)(((byte)(161)))));
-            this.listView_Apartamente.Location = new System.Drawing.Point(44, 101);
-            this.listView_Apartamente.Name = "listView_Apartamente";
-            this.listView_Apartamente.Size = new System.Drawing.Size(181, 340);
-            this.listView_Apartamente.TabIndex = 0;
-            this.listView_Apartamente.UseCompatibleStateImageBehavior = false;
-            // 
             // label_ListaApartamente
             // 
             this.label_ListaApartamente.AutoSize = true;
@@ -224,6 +216,15 @@
             this.label_ListaApartamente.Size = new System.Drawing.Size(224, 16);
             this.label_ListaApartamente.TabIndex = 1;
             this.label_ListaApartamente.Text = "Lista Apartamente";
+            // 
+            // listView_Apartamente
+            // 
+            this.listView_Apartamente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(169)))), ((int)(((byte)(161)))));
+            this.listView_Apartamente.Location = new System.Drawing.Point(44, 101);
+            this.listView_Apartamente.Name = "listView_Apartamente";
+            this.listView_Apartamente.Size = new System.Drawing.Size(181, 340);
+            this.listView_Apartamente.TabIndex = 0;
+            this.listView_Apartamente.UseCompatibleStateImageBehavior = false;
             // 
             // User_Form
             // 

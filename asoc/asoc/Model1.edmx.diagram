@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c8fbeb8af78f4fcd894cbb858dc7cca9" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.Agent_Termic" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Angajati" Width="1.5" PointX="7.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ApaCalda" Width="1.5" PointX="5.25" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ApaRece" Width="1.5" PointX="5.25" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Apartamente" Width="1.5" PointX="3" PointY="26.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Canalizare" Width="1.5" PointX="5.25" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Contracte_Individuale" Width="1.5" PointX="5.25" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Conturi_de_Utilizator" Width="1.5" PointX="3" PointY="55.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Cota_Parte" Width="1.5" PointX="5.25" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Curatenie" Width="1.5" PointX="5.25" PointY="21.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Date_Angajati" Width="1.5" PointX="10" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.EnergieElecrica_pe_scara" Width="1.5" PointX="5.25" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.EnergieElectrica" Width="1.5" PointX="5.25" PointY="27.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Facturi_Clienti" Width="1.5" PointX="5.25" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Facturi_Furnizori" Width="1.5" PointX="10" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Fond_Reparatii" Width="1.5" PointX="5.25" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Fond_Rulment" Width="1.5" PointX="5.25" PointY="37.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Furnizori" Width="1.5" PointX="7.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Gaz" Width="1.5" PointX="5.25" PointY="40.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Lift" Width="1.5" PointX="5.25" PointY="43.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Locatari" Width="1.5" PointX="5.25" PointY="46.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Membri_Asociatie" Width="1.5" PointX="0.75" PointY="30.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Restante" Width="1.5" PointX="7.5" PointY="31.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Salarii_Angajati" Width="1.5" PointX="5.25" PointY="49.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Salubritate" Width="1.5" PointX="5.25" PointY="52.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Venituri" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Carduri" Width="1.5" PointX="3" PointY="58" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Coduri" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="Model.AP_AT" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.A_Da" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.A_AC" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.AP_AR" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.A_C" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.A_CNN" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.A_EC" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.A_ECS" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.A_G" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.A_L" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.A_S" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.A_SA" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.AP_C" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.AP_COTA" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.AP_facturi_clienti" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.AP_Fond_Rulment" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.AP_LOC" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.AP_REP" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.PRO_AP" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.M_CONTURI" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.Fur_restante" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.F_Facturi" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.M_CARD" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

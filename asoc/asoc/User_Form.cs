@@ -21,5 +21,10 @@ namespace asoc
         {
 
         }
+
+        private void button_Factura_Curenta_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
